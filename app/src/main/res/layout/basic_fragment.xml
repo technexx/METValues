@@ -116,4 +116,48 @@
         android:textSize="20sp">
     </Spinner>
 
+    <TextView
+        android:id="@+id/tdee_text"
+        android:text="@string/tdee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_text"
+        android:layout_marginTop="48dp"
+        android:textSize="24sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/average_text"
+        android:text="@string/average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tdee_text"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tdee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_text"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="150dp"
+        android:textSize="24sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tdee"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="150dp"
+        android:textSize="24sp">
+    </TextView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
