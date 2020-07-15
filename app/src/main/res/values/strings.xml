@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MET Values</string>
+
+    <string name="gender">Gender:</string>
+    <string name="age">Age:</string>
+    <string name="weight">Weight:</string>
+    <string name="height">Height:</string>
+    <string name="activity">Activity Level:</string>
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <string name="act_1">Mostly Inactive</string>
+    <string name="act_2">Slightly Active</string>
+    <string name="act_3">Moderately Active</string>
+    <string name="act_4">Very Active</string>
+    <string name="act_5">Extremely active</string>
 </resources>
