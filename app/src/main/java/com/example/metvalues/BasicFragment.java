@@ -19,10 +19,15 @@ import java.util.List;
 
 public class BasicFragment extends Fragment {
 
-    private int ageVal;
-    private int weightVal;
-    private int heightVal;
+    private String ageVal;
+    private String weightVal;
+    private String heightVal;
     private int activityVal;
+
+    private int ageConv;
+    private int weightConv;
+    private int heightConv;
+
     private boolean isMetric;
     private double impMale ;
     private double impFemale;
@@ -49,9 +54,9 @@ public class BasicFragment extends Fragment {
         final Button calculate = root.findViewById(R.id.calculate);
 
         final List<String> gender = new ArrayList<>();
-        List<Integer> age = new ArrayList<>();
-        List<Integer> weight = new ArrayList<>();
-        List<Integer> height = new ArrayList<>();
+        final List<String> age = new ArrayList<>();
+        List<String> weight = new ArrayList<>();
+        final List<String> height = new ArrayList<>();
         List<String> activity = new ArrayList<>();
 
         gender.add(getString(R.string.male));
@@ -61,30 +66,30 @@ public class BasicFragment extends Fragment {
         activity.add(getString(R.string.act_3));
         activity.add(getString(R.string.act_4));
         activity.add(getString(R.string.act_5));
-        for (int i=1; i<101; i++) {
-            age.add(i);
+        for (int i=18; i<101; i++) {
+            age.add(i + " " + "years");
         }
 
         if (isMetric) {
-            for (int i=1; i<151; i++) {
-                weight.add(i);
+            for (int i=1; i<151; i++){
+                weight.add((i) + " "  + "kg");
             }
             for (int i=1; i<201; i++) {
-                height.add(i);
+                height.add(i + " " + "cm");
             }
         } else {
             for (int i=1; i<301; i++) {
-                weight.add(i);
+                weight.add(i + " " + "lb");
             }
             for (int i=1; i<101; i++) {
-                height.add(i);
+                height.add(i + " " + "inches");
             }
         }
 
         ArrayAdapter<String> genderAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, gender);
-        ArrayAdapter<Integer> ageAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, age);
-        ArrayAdapter<Integer> weightAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, weight);
-        ArrayAdapter<Integer> heightAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, height);
+        ArrayAdapter<String> ageAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, age);
+        ArrayAdapter<String> weightAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, weight);
+        ArrayAdapter<String> heightAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, height);
         ArrayAdapter<String> activityAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, activity);
 
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -103,13 +108,27 @@ public class BasicFragment extends Fragment {
         weight_spinner.setSelection(149);
         height_spinner.setSelection(59);
 
+        //Todo: Add Strings for metric/imperial
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ageVal = age_spinner.getSelectedItemPosition() +1;
-                weightVal = weight_spinner.getSelectedItemPosition() +1;
-                heightVal = height_spinner.getSelectedItemPosition() +1;
+                ageVal = age_spinner.getSelectedItem().toString();
+                weightVal = weight_spinner.getSelectedItem().toString();
+                heightVal = height_spinner.getSelectedItem().toString();
                 activityVal = activity_spinner.getSelectedItemPosition();
+
+                String[] conv1 = ageVal.split(" ", 2);
+                String[] conv2 = weightVal.split(" ", 2);
+                String[] conv3 = heightVal.split(" ", 2);
+
+                String conv4 = conv1[0];
+                String conv5 = conv2[0];
+                String conv6 = conv3[0];
+
+                ageConv = Integer.parseInt(conv4);
+                weightConv = Integer.parseInt(conv5);
+                heightConv = Integer.parseInt(conv6);
+                Log.i("test", conv4);
 
                 double modVal = 0;
 
@@ -126,10 +145,10 @@ public class BasicFragment extends Fragment {
                         modVal = 1.9;
                 }
 
-                impMale = ( 66 + (6.2 * weightVal) + (12.7 * heightVal) - (6.76 * ageVal) ) * modVal;
-                metMale = ( 66 + (13.7 * weightVal) + (5 * heightVal) - (6.76 * ageVal) ) * modVal;
-                impFemale = ( 655.1 + (4.35 * weightVal) + (4.7 * heightVal) - (4.7 * ageVal) ) * modVal;
-                metFemale = ( 655.1 + (9.6 * weightVal) + (1.8 * heightVal) - (4.7 *ageVal) ) * modVal;
+                impMale = ( 66 + (6.2 * weightConv) + (12.7 * heightConv) - (6.76 * ageConv) ) * modVal;
+                metMale = ( 66 + (13.7 * weightConv) + (5 * heightConv) - (6.76 * ageConv) ) * modVal;
+                impFemale = ( 655.1 + (4.35 * weightConv) + (4.7 * heightConv) - (4.7 * ageConv) ) * modVal;
+                metFemale = ( 655.1 + (9.6 * weightConv) + (1.8 * heightConv) - (4.7 * ageConv) ) * modVal;
                 double calories = 0;
 
                 if (isMetric) {
