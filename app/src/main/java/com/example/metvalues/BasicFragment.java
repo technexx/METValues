@@ -109,12 +109,27 @@ public class BasicFragment extends Fragment {
                 ageVal = age_spinner.getSelectedItemPosition() +1;
                 weightVal = weight_spinner.getSelectedItemPosition() +1;
                 heightVal = height_spinner.getSelectedItemPosition() +1;
-                activityVal = activity_spinner.getSelectedItemPosition() +1;
+                activityVal = activity_spinner.getSelectedItemPosition();
 
-                impMale = 66 + (6.2 * weightVal) + (12.7 * heightVal) - (6.76 * ageVal);
-                metMale = 66 + (13.7 * weightVal) + (5 * heightVal) - (6.76 * ageVal);
-                impFemale = 655.1 + (4.35 * weightVal) + (4.7 * heightVal) - (4.7 * ageVal);
-                metFemale = 655.1 + (9.6 * weightVal) + (1.8 * heightVal) - (4.7 *ageVal);
+                double modVal = 0;
+
+                switch (activityVal) {
+                    case 0:
+                        modVal = 1.2; break;
+                    case 1:
+                        modVal = 1.37; break;
+                    case 2:
+                        modVal = 1.55; break;
+                    case 3:
+                        modVal = 1.725; break;
+                    case 4:
+                        modVal = 1.9;
+                }
+
+                impMale = ( 66 + (6.2 * weightVal) + (12.7 * heightVal) - (6.76 * ageVal) ) * modVal;
+                metMale = ( 66 + (13.7 * weightVal) + (5 * heightVal) - (6.76 * ageVal) ) * modVal;
+                impFemale = ( 655.1 + (4.35 * weightVal) + (4.7 * heightVal) - (4.7 * ageVal) ) * modVal;
+                metFemale = ( 655.1 + (9.6 * weightVal) + (1.8 * heightVal) - (4.7 *ageVal) ) * modVal;
                 double calories = 0;
 
                 if (isMetric) {
