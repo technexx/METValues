@@ -7,7 +7,10 @@
     <string name="imperial">Imperial</string>
     <string name="metric">Metric</string>
     <string name="tdee">TDEE:</string>
+    <string name="calories">Calories</string>
     <string name="average">Avg. Hourly:</string>
+    <string name="calculate">Calculate!</string>
+    <string name="two_part">%1$s  %2$s</string>
 
     <string name="gender">Gender:</string>
     <string name="age">Age:</string>

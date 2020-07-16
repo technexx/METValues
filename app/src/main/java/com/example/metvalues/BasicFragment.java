@@ -1,5 +1,6 @@
 package com.example.metvalues;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
@@ -17,29 +19,40 @@ import java.util.List;
 
 public class BasicFragment extends Fragment {
 
+    private int ageVal;
+    private int weightVal;
+    private int heightVal;
+    private int activityVal;
     private boolean isMetric;
+    private double impMale ;
+    private double impFemale;
+    private double metMale;
+    private double metFemale;
+    private double avg;
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.basic_fragment, container, false);
 
-        Spinner gender_spinner = root.findViewById(R.id.gender_spinner);
-        Spinner age_spinner = root.findViewById(R.id.age_spinner);
-        Spinner weight_spinner = root.findViewById(R.id.weight_spinner);
-        Spinner height_spinner = root.findViewById(R.id.height_spinner);
-        Spinner activity_spinner = root.findViewById(R.id.activity_spinner);
-        TextView tdee = root.findViewById(R.id.tdee);
-        TextView average = root.findViewById(R.id.average);
+        Bundle args = getArguments();
+        if (args != null) {
+            isMetric = args.getBoolean("isMetric");
+        }
 
-        List<String> gender = new ArrayList<>();
+        final Spinner gender_spinner = root.findViewById(R.id.gender_spinner);
+        final Spinner age_spinner = root.findViewById(R.id.age_spinner);
+        final Spinner weight_spinner = root.findViewById(R.id.weight_spinner);
+        final Spinner height_spinner = root.findViewById(R.id.height_spinner);
+        final Spinner activity_spinner = root.findViewById(R.id.activity_spinner);
+        final TextView tdee = root.findViewById(R.id.tdee);
+        final TextView average = root.findViewById(R.id.average);
+        final Button calculate = root.findViewById(R.id.calculate);
+
+        final List<String> gender = new ArrayList<>();
         List<Integer> age = new ArrayList<>();
         List<Integer> weight = new ArrayList<>();
         List<Integer> height = new ArrayList<>();
         List<String> activity = new ArrayList<>();
-
-        double imperialCalc = 0;
-        double metricCalc = 0;
-        double avg = 0;
 
         gender.add(getString(R.string.male));
         gender.add(getString(R.string.female));
@@ -90,20 +103,35 @@ public class BasicFragment extends Fragment {
         weight_spinner.setSelection(149);
         height_spinner.setSelection(59);
 
-        int ageVal = age_spinner.getSelectedItemPosition() +1;
-        int weightVal = weight_spinner.getSelectedItemPosition() +1;
-        int heightVal = height_spinner.getSelectedItemPosition() +1;
-        int activityVal = activity_spinner.getSelectedItemPosition() +1;
+        calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ageVal = age_spinner.getSelectedItemPosition() +1;
+                weightVal = weight_spinner.getSelectedItemPosition() +1;
+                heightVal = height_spinner.getSelectedItemPosition() +1;
+                activityVal = activity_spinner.getSelectedItemPosition() +1;
 
-        if (gender_spinner.getSelectedItemPosition() == 0) {
-            imperialCalc = 66 + (6.2 * weightVal) + (12.7 * heightVal) - (6.76 * ageVal);
-            metricCalc = 66 + (13.7 * weightVal) + (5 * heightVal) - (6.76 * ageVal);
-        } else {
-            imperialCalc = 655.1 + (4.35 * weightVal) + (4.7 * heightVal) - (4.7 * ageVal);
-            metricCalc = 655.1 + (9.6 * weightVal) + (1.8 * heightVal) - (4.7 *ageVal);
-        }
+                impMale = 66 + (6.2 * weightVal) + (12.7 * heightVal) - (6.76 * ageVal);
+                metMale = 66 + (13.7 * weightVal) + (5 * heightVal) - (6.76 * ageVal);
+                impFemale = 655.1 + (4.35 * weightVal) + (4.7 * heightVal) - (4.7 * ageVal);
+                metFemale = 655.1 + (9.6 * weightVal) + (1.8 * heightVal) - (4.7 *ageVal);
 
+                if (isMetric) {
+                    if (gender_spinner.getSelectedItemPosition() == 0) {
+                        tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(metMale)), getString(R.string.calories)));
+                    } else {
+                        tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(metFemale)), getString(R.string.calories)));
+                    }
+                } else {
+                    if (gender_spinner.getSelectedItemPosition() == 0) {
+                        tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(impMale)), getString(R.string.calories)));
+                    } else {
+                        tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(impFemale)), getString(R.string.calories)));
+                    }
+                }
+            }
+        });
         return root;
-
     }
+
 }
