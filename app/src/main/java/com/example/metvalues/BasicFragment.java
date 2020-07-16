@@ -115,20 +115,25 @@ public class BasicFragment extends Fragment {
                 metMale = 66 + (13.7 * weightVal) + (5 * heightVal) - (6.76 * ageVal);
                 impFemale = 655.1 + (4.35 * weightVal) + (4.7 * heightVal) - (4.7 * ageVal);
                 metFemale = 655.1 + (9.6 * weightVal) + (1.8 * heightVal) - (4.7 *ageVal);
+                double calories = 0;
 
                 if (isMetric) {
                     if (gender_spinner.getSelectedItemPosition() == 0) {
-                        tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(metMale)), getString(R.string.calories)));
+                        calories = metMale;
                     } else {
-                        tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(metFemale)), getString(R.string.calories)));
+                        calories = metFemale;
                     }
                 } else {
                     if (gender_spinner.getSelectedItemPosition() == 0) {
-                        tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(impMale)), getString(R.string.calories)));
+                        calories = impMale;
                     } else {
-                        tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(impFemale)), getString(R.string.calories)));
+                        calories = impFemale;
                     }
                 }
+                tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(calories)), getString(R.string.calories)));
+
+                double avg = calories / 24;
+                average.setText(getString(R.string.two_part, String.valueOf(Math.round(avg)), getString(R.string.calories)));
             }
         });
         return root;
