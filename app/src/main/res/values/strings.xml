@@ -42,12 +42,9 @@
     <string name="self_care">Self Care</string>
     <string name="sexual">Sexual Activity</string>
     <string name="sports">Sports</string>
-    <string name="transportation">Transportation</string>
     <string name="walking">Walking</string>
     <string name="water">Water Activities</string>
     <string name="winter">Winter Activities</string>
-    <string name="religious">Religious Activities</string>
-    <string name="volunteer">Volunteer Activities</string>
 
     <string-array name="bicycling">
         <item>Mountain biking- uphill and vigorous </item>
@@ -237,16 +234,238 @@
     </string-array>
 
     <string-array name="occupation">
+        <item>Flight attendant - general</item>
+        <item>Baker - light effort </item>
+        <item>Baker - moderate effort </item>
+        <item>Bookbinding</item>
+        <item>Directing traffic </item>
+        <item>Carpentry - light effort </item>
+        <item>Carpentry - moderate effort </item>
+        <item>Carpentry - vigorous effort </item>
+        <item>Housekeeper - general</item>
+        <item>Coal mining - general </item>
+        <item>Chef - general </item>
+        <item>Construction - general </item>
+        <item>Electrician - general </item>
+        <item>Farming - light effort </item>
+        <item>Farming - moderate effort </item>
+        <item>Farming - vigorous effort </item>
+        <item>Firefighting - general </item>
+        <item>Fishing - light effort </item>
+        <item>Fishing - moderate effort </item>
+        <item>Fishing - vigorous effort </item>
+        <item>Garbage collector - general </item>
+        <item>Hair stylist - general </item>
+         <item>Horse care - light duties </item>
+        <item>Horse care - heavier duties </item>
+        <item>Horse racing - walking</item>
+        <item>Horse racing - trotting</item>
+        <item>Horse racing - galloping</item>
+        <item>Lawn and yard work - general </item>
+        <item>Machine tooling - light effort </item>
+        <item>Machine tooling - moderate effort </item>
+        <item>Unskilled manual labor - light effort </item>
+        <item>Unskilled manual labor - moderate effort </item>
+        <item>Unskilled manual labor - vigorous effort </item>
+        <item>Masonry - light effort</item>
+        <item>Masonry - moderate effort</item>
+        <item>Massage therapist - standing </item>
+        <item>Fruit picking - general </item>
+        <item>Painting - general </item>
+        <item>Plumbing - general </item>
+        <item>Shoe repair - general </item>
+        <item>Shoveling - moderate effort </item>
+        <item>Shoveling - vigorous effort </item>\
+        <item>Standing tasks (e.g. bartending, retail) at light effort </item>
+        <item>Standing tasks (e.g. bartending, retail) at moderate effort </item>
+        <item>Steel mill - moderate effort </item>
+        <item>Steel mill - vigorous effort </item>
+        <item>Tailoring - general </item>
+        <item>Driver - general </item>
+    </string-array>
+
+    <string-array name="running">
+        <item>Running - 4 mph (13 min/mile) </item>
+        <item>Running - 5 mph (12 min/mile)</item>
+        <item>Running - 5.2 mph (11.5 min/mile)</item>
+        <item>Running - 6 mph (10 min/mile)</item>
+        <item>Running - 6.7 mph (9 min/mile)</item>
+        <item>Running - 7 mph (8.5 min/mile)</item>
+        <item>Running - 7.5 mph (8 min/mile)</item>
+        <item>Running - 8 mph (7.5 min/mile)</item>
+        <item>Running - 8.6 mph (7 min/mile)</item>
+        <item>Running - 9 mph (6.5 min/mile)</item>
+        <item>Running - 10 mph (6 min/mile)</item>
+        <item>Running -11 mph (5.5 min/mile)</item>
+        <item>Running - 12 mph (5 min/mile)</item>
+        <item>Running - 13 mph (4.6 min/mile)</item>
+        <item>Running - 14 mph (4.3 min/mile)</item>
+    </string-array>
+
+    <string-array name="self_care">
+        <item>Getting ready for bed - general </item>
+        <item>Elimination - sitting </item>
+        <item>Bathing </item>
+        <item>Eating - sitting </item>
+        <item>Hair styling - standing </item>
+        <item>Showering </item>
+    </string-array>
+
+    <string-array name="sexual_activity">
+        <item>Sex - light effort</item>
+        <item>Sex - moderate effort</item>
+        <item>Sex - vigorous effort</item>
+    </string-array>
+
+    <string-array name="sports">
+        <item>Children\'s games (e.g. hopscotch, dodgeball, 4-square) at moderate effort </item>
+        <item>Cheerleading or gymnastics - competitive </item>
+        <item>Cricket - general </item>
+        <item>croquet - general </item>
+        <item>Curling - general </item>
+        <item>Darts - general </item>
+        <item>Auto racing - open wheel </item>
+        <item>Fencing - general </item>
+        <item>Football (touch) - light effort </item>
+        <item>Football (touch) - moderate effort </item>
+        <item>Football (contact) - general </item>
+        <item>Catch (e.g. baseball or football) - general </item>
+        <item>Frisbee - general </item>
+        <item>Frisbee - ultimate </item>
+        <item>Golf - general </item>
+        <item>Gymnastics - general </item>
+        <item>Hackey sack - general </item>
+        <item>Handball - general </item>
+        <item>Handball - team play </item>
+        <item>Hang gliding </item>
+        <item>Hockey (field) - general </item>
+        <item>Hockey (ice) - general </item>
+        <item>Hockey (ice) - competitive </item>
+        <item>Horseback riding - general </item>
+        <item>Martial arts - slow or practice pace </item>
+        <item>Martial arts - moderate pace </item>
+        <item>Juggling - general</item>
+        <item>Kickball - general </item>
+        <item>Lacrosse - general </item>
+        <item>Lawn bowling - general</item>
+        <item>Moto-cross - general </item>
+        <item>Paddleball - general </item>
+        <item>Paddleball - competitive </item>
+        <item>Polo (horseback) - general </item>
+        <item>Racquetball - general </item>
+        <item>Racquetball - competitive </item>
+        <item>Rock or mountain climbing - general </item>
+        <item>Rodeo sports - light effort </item>
+        <item>Rodeo sports - moderate effort </item>
+        <item>Rodeo sports - vigorous effort </item>
+        <item>Rugby - general </item>
+        <item>Rugby - competitive </item>
+        <item>Shuffleboard </item>
+        <item>Skateboarding - general </item>
+        <item>Skateboarding - competitive </item>
+        <item>Rollerskating </item>
+        <item>Rollerblading - recreational pace </item>
+        <item>Rollerblading - moderate pace </item>
+        <item>Rollerblading - fast pace </item>
+        <item>Rollerblading - intense pace </item>
+        <item>Skydiving or base jumping </item>
+        <item>Soccer - casual </item>
+        <item>Soccer - competitive </item>
+        <item>Softball - general </item>
+        <item>Squash - general </item>
+        <item>Table tennis - general </item>
+        <item>Tennis - general </item>
+        <item>Trampoline - recreational </item>
+        <item>Trampoline - competitive </item>
+        <item>Volleyball (hard surface) - casual </item>
+        <item>Volleyball (hard surface) - competitive </item>
+        <item>Volleyball (sand) - general </item>
+        <item>Wrestling - general </item>
+        <item>Track and field (e.g. shot, discus, hammer throw) </item>
+        <item>Track and field (e.g. high jump, long jump, javelin) </item>
+        <item>Track and field (e.g. steeplechase, hurdles) </item>
+    </string-array>
+
+    <string-array name="walking">
+        <item>Backpacking - general\</item>
+        <item>Climbing hills (no load) </item>
+        <item>Climbing hills (1 to 9 lb load) </item>
+        <item>Climbing hills (10 to 20 lb load) </item>
+        <item>Climbing hills (21 to 42 lb load) </item>
+        <item>Climbing hills (42+ lb load) </item>
+        <item>Climbing stairs - general </item>
+        <item>Descending stairs - general </item>
+        <item>Using crutches </item>
+        <item>Hiking - general </item>
+        <item>Marching - moderate speed </item>
+        <item>Marching - rapid speed </item>
+        <item>Wheelchair pushing </item>
+        <item>Walking - 2.5 mph </item>
+        <item>Walking - 3 mph </item>
+        <item>Walking - 3.5 mph </item>
+        <item>Walking - 4 mph </item>
+        <item>Walking - 5 mph </item>
+        <item>Walking (backwards) - 3.5 mph</item>
         <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
+    </string-array>
+
+    <string-array name="water">
+        <item>Boating - driving powerboat </item>
+        <item>Canoeing - general </item>
+        <item>Canoeing - rowing with light effort </item>
+        <item>Canoeing - rowing with moderate effort </item>
+        <item>Canoeing - rowing with vigorous effort </item>
+        <item>Diving - genera; </item>
+        <item>Kayaking -general </item>
+        <item>Paddle boating - general</item>
+        <item>Sailing - general </item>
+        <item>Sailing - competitive </item>
+        <item>Skiing - general </item>
+        <item>Skindiving - light pace </item>
+        <item>Skindiving - moderate pace </item>
+        <item>Skindiving - fast pace </item>
+        <item>Snorkeling - general </item>
+        <item>Surfing - general </item>
+        <item>Surfing - competitive </item>
+        <item>Swimming (backstroke) - general </item>
+        <item>Swimming - (backstroke) competitive </item>
+        <item>Swimming (breaststroke) - general </item>
+        <item>Swimming - (breaststroke) competitive </item>
+        <item>Swimming (butterfly) - general </item>
+        <item>Swimming - (butterfly) competitive </item>
+        <item>Swimming (synchronized) - general </item>
+        <item>Swimming (treading water ) - moderate effort </item>
+        <item>Swimming (treading water ) - vigorous effort </item>
+        <item>Tubing - general </item>
+        <item>Water aerobics - general </item>
+        <item>Water polo - general </item>
+        <item>Water volleyball - general </item>
+        <item>Water jogging - general </item>
+        <item>Water walking - slow pace </item>
+        <item>Water walking - moderate pace </item>
+        <item>Water walking - fast pace </item>
+        <item>Windsurfing - not pumping for speed </item>
+        <item>Windsurfing - competitive and pumping for speed </item>
+    </string-array>
+
+    <string-array name="winter">
+        <item>Dog sledding (mushing) </item>
+        <item>Ice skating - general</item>
+        <item>Ice skating - competitive</item>
+        <item>Ice skating (dancing) </item>
+        <item>Skiing - general </item>
+        <item>Skiing (cross country) - light effort </item>
+        <item>Skiing (cross country) - moderate effort </item>
+        <item>Skiing (cross country) - vigorous effort </item>
+        <item>Sledding or tobogganing - general</item>
+        <item>Snow shoeing - moderate effort </item>
+        <item>Snow shoeing - vigorous effort </item>
+        <item>Snow shoveling (hand) - moderate effort </item>
+        <item>Snow shoveling (hand) - vigorous effort </item>
+        <item>Snow blowing - general </item>
+    </string-array>
+
+    <string-array name="bicycle_values">
         <item> </item>
         <item> </item>
         <item> </item>
