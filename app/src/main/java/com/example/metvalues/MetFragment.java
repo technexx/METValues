@@ -1,5 +1,6 @@
 package com.example.metvalues;
 
+import android.graphics.pdf.PdfDocument;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +33,8 @@ public class MetFragment extends Fragment {
         category_list = new ArrayList<>();
         activity_list = new ArrayList<>();
         score_list = new ArrayList<>();
+
+
 
         return root;
     }

@@ -67,6 +67,184 @@
     </string-array>
 
     <string-array name="conditioning">
+        <item>Activity promoting video game (e.g. Wii Fit) - light effort (e.g. yoga, stretching) </item>
+        <item>Activity promoting video game (e.g. Wii Fit) - moderate effort (e.g. aerobic) </item>
+        <item>Activity promoting video game (e.g. Wii Fit) - vigorous effort (e.g. dancing)</item>
+        <item>Obstacle courses and/or boot camp </item>
+        <item>Stationary bicycle - 30 to 50 watts - light effort </item>
+        <item>Stationary bicycle - 51 to 89 watts - light to moderate effort </item>
+        <item>Stationary bicycle - 90 to 100 watts - moderate to vigorous effort </item>
+        <item>Stationary bicycle - 101 to 160 watts - vigorous effort </item>
+        <item>Stationary bicycle - 161 to 200 watts - vigorous effort </item>
+        <item>Stationary bicycle - 201 to 270 watts - vigorous effort </item>
+        <item>Stationary bicycle - spin class </item>
+        <item>Calisthenics (e.g. sit-ups, crunches) - light effort </item>
+        <item>Calisthenics (e.g. push-ups, pull-ups) - moderate effort </item>
+        <item>Calisthenics (e.g. push-ups, pull-ups) - vigorous effort </item>
+        <item>Circuit training - moderate effort </item>
+        <item>Circuit training - vigorous effort </item>
+        <item>Eliptical training - moderate effort </item>
+        <item>Resistance training - multiple exercises, 8 to 15 repetitions at varied resistance </item>
+        <item>Resistance training - squats at slow or explosive effort </item>
+        <item>Resistance training - power lifting or body building at rigorous effort </item>
+        <item>Rope skipping - general </item>
+        <item>Stationary rowing - low effort </item>
+        <item>Stationary rowing - 100 watts at moderate effort </item>
+        <item>Stationary rowing - 150 watts at vigorous effort </item>
+        <item>Stationary rowing - 200 watts at very vigorous effort </item>
+        <item>Ski machine - general </item>
+        <item>Stretching - mild </item>
+        <item>Pilates - general </item>
+        <item>Water aerobics or calisthenics </item>
+        <item>Video exercise workouts - low effort (e.g. yoga, stretching) </item>
+        <item>Video exercise workouts - moderate effort (e.g. cardio, resistance) </item>
+        <item>Video exercise workouts - vigorous effort (e.g. cardio, resistance) </item>
+        <item>Yoga - Hatha </item>
+        <item>Yoga - Power </item>
+        <item>Yoga - Nadisodhana</item>
+        <item>Yoga - Surya Namaskar</item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+    </string-array>
+
+    <string-array name="dancing">
+        <item>Ballet, Modern, or Jazz - general rehearsal or class </item>
+        <item>Ballet, Modern, or Jazz - performance or vigorous effort </item>
+        <item>Tap</item>
+        <item>Aerobic - low impact </item>
+        <item>Aerobic - high impact </item>
+        <item>Bench step class - general </item>
+        <item>Ballroom - slow </item>
+        <item>Ballroom - fast </item>
+        <item>Ballroom - competitive </item>
+    </string-array>
+
+    <string-array name="fishing">
+        <item>Fishing - sitting </item>
+        <item>Fishing - standing </item>
+        <item>Hunting - general  </item>
+        <item>Rifle exercises </item>
+        <item> </item>
+    </string-array>
+
+    <string-array name="home">
+        <item>Cleaning - sweeping at light effort </item>
+        <item>Cleaning - sweeping at moderate effort </item>
+        <item>Cleaning - mopping at light effort</item>
+        <item>Cleaning - mopping at moderate effort </item>
+        <item>Cleaning - general tasks at light effort </item>
+        <item>Cleaning - general tasks at moderate effort </item>
+        <item>Cleaning - general tasks at vigorous effort </item>
+        <item>Cleaning - dusting </item>
+        <item>Kitchen activity - (e.g. cooking, cleaning) at light effort</item>
+        <item>Kitchen activity - (e.g. cooking, cleaning) at moderate effort </item>
+        <item>Ironing</item>
+        <item>Knitting or sewing - light effort </item>
+        <item>Sewing - machine </item>
+        <item>Laundry - folding, packing, hanging at light effort </item>
+        <item>Laundry - folding, washing by hand at moderate effort </item>
+        <item>Making beds and changing linens </item>
+        <item>Moving furniture or carrying boxes</item>
+        <item>Scrubbing floors - light effort </item>
+        <item>Scrubbing floors - moderate effort  </item>
+        <item>Scrubbing floors - vigorous effort  </item>
+        <item>Watering plants </item>
+        <item>Walking or running while playing with children - light effort </item>
+        <item>Walking or running while playing with children - moderate effort </item>
+        <item>Walking or running while playing with children - vigorous effort</item>
+        <item>Walking or running while playing with animals - light effort </item>
+        <item>Walking or running while playing with animals - moderate effort </item>
+        <item>Walking or running while playing with animals - vigorous effort</item>
+        <item>Child care - general at light effort </item>
+        <item>Child care - general at moderate effort </item>
+        <item>Animal care - general </item>
+        <item>Automobile work - general </item>
+        <item>Carpentry - general</item>
+        <item>Carpentry - home remodeling tasks at light effort </item>
+        <item>Carpentry - home remodeling tasks at moderate effort </item>
+        <item>Home repair - light effort </item>
+        <item>Home repair - moderate effort </item>
+        <item>Home repair - vigorous effort </item>
+        <item>Cleaning gutters </item>
+        <item>Hammering nails </item>
+        <item>Painting - general </item>
+        <item>Roofing - genral </item>
+        <item>Sanding floors with power sander </item>
+        <item>Sharpening tools </item>
+        <item> </item>
+    </string-array>
+
+    <string-array name="garden">
+        <item>Washing and waxing car </item>
+        <item>Chopping wood - moderate effort </item>
+        <item>Chopping wood - vigorous effort </item>
+        <item>Carrying or loading lumber - moderate effort </item>
+        <item>Carrying or loading lumber - vigorous effort </item>
+        <item>Garden work - digging, spading, composting at light effort </item>
+        <item>Garden work - digging, spading, composting at moderate effort </item>
+        <item>Garden work - digging, spading, composting at vigorous effort </item>
+        <item>Garden work - planting at light effort</item>
+        <item>Garden work - planting at moderate effort</item>
+        <item>Mowing lawn - hand mower </item>
+        <item>Mowing lawn - power mower </item>
+        <item>Mowing lawn - riding mower </item>
+        <item>Shoveling snow - by hand with moderate effort </item>
+        <item>Shoveling snow - by hand with vigorous effort</item>
+        <item>Shoveling snow -  </item>
+        <item>Shoveling - general </item>
+        <item>Trimming shrubs or trees - manual cutter </item>
+        <item>Trimming shrubs or trees - power cutter </item>
+        <item>Yard work - general at light effort </item>
+        <item>Yard work - general at moderate effort </item>
+        <item>Yard work - general at vigorous effort</item>
+    </string-array>
+
+    <string-array name="misc">
+        <item>Board games - sitting </item>
+        <item>Casino gambling - standing </item>
+        <item>Drawing, writing, painting - sitting </item>
+        <item>Drawing, writing, painting - standing </item>
+        <item>Reading, texting, talking - sitting </item>
+        <item>Reading, texting, talking - standing </item>
+        <item>Arts and crafts - sitting at light effort </item>
+        <item>Arts and crafts - sitting at moderate effort </item>
+        <item>Arts and crafts - sitting at vigorous effort </item>
+        <item>Arts and crafts - standing at light effort </item>
+        <item>Arts and crafts - standing at moderate effort </item>
+        <item>Arts and crafts - standing at vigorous effort </item>
+        <item>Camping - general </item>
+    </string-array>
+
+    <string-array name="music">
+        <item>Accordion - sitting </item>
+        <item>Cello - sitting </item>
+        <item>Conducting orchestra - standing </item>
+        <item>Double bass - standing </item>
+        <item>Drums - sitting </item>
+        <item>Flute - sitting </item>
+        <item>Horn - standing </item>
+        <item>Organ - sitting</item>
+        <item>Piano - sitting </item>
+        <item>Trombone - standing </item>
+        <item>Trumpet - standing </item>
+        <item>Violin - sitting </item>
+        <item>Woodwind - sitting </item>
+        <item>Guitar - sitting </item>
+        <item>Guitar - standing</item>
+        <item>Marching band - moderate pace</item>
+        <item>Marching band - brisk pace </item>
+    </string-array>
+
+    <string-array name="occupation">
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
         <item> </item>
         <item> </item>
         <item> </item>
@@ -80,5 +258,19 @@
         <item> </item>
         <item> </item>
     </string-array>
+
+    <string-array name="holder">
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+    </string-array>
+
 
 </resources>
