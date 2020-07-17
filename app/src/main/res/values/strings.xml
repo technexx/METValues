@@ -2,7 +2,7 @@
     <string name="app_name">MET Values</string>
 
     <string name="basic">Basic</string>
-    <string name="advanced">Advanced</string>
+    <string name="met">MET</string>
     <string name="custom">Custom</string>
     <string name="imperial">Imperial</string>
     <string name="metric">Metric</string>
@@ -26,4 +26,59 @@
     <string name="act_3">Moderately Active</string>
     <string name="act_4">Very Active</string>
     <string name="act_5">Extremely Active</string>
+
+    <string name="bicycling">Bicycling</string>
+    <string name="conditioning">Conditioning Exercise</string>
+    <string name="dancing">Dancing</string>
+    <string name="fishing">Fishing and Hunting</string>
+    <string name="home">Home Activities</string>
+    <string name="home_repair">Home Repair</string>
+    <string name="inactivity">Inactivity</string>
+    <string name="garden">Lawn and Garden</string>
+    <string name="misc">Miscellaneous</string>
+    <string name="music">Music Playing</string>
+    <string name="occupational">Occupational</string>
+    <string name="running">Running</string>
+    <string name="self_care">Self Care</string>
+    <string name="sexual">Sexual Activity</string>
+    <string name="sports">Sports</string>
+    <string name="transportation">Transportation</string>
+    <string name="walking">Walking</string>
+    <string name="water">Water Activities</string>
+    <string name="winter">Winter Activities</string>
+    <string name="religious">Religious Activities</string>
+    <string name="volunteer">Volunteer Activities</string>
+
+    <string-array name="bicycling">
+        <item>Mountain biking- uphill and vigorous </item>
+        <item>Mountain biking - competitive and racing </item>
+        <item>Mountain biking - general </item>
+        <item>BMX biking</item>
+        <item>Under 10 mph biking - leisure </item>
+        <item>General biking</item>
+        <item>Biking \@ 5.5 mph </item>
+        <item>Biking \@ 9.4 mph  </item>
+        <item>Biking \@ 10 to 11.9 mph  </item>
+        <item>Biking \@ 12 to 13.9 mph  </item>
+        <item>Biking \@ 14 to 15.9 mph  </item>
+        <item>Biking \@ 16 to 19 mph  </item>
+        <item>Biking \@ over 20 mph  </item>
+        <item>unicycling </item>
+    </string-array>
+
+    <string-array name="conditioning">
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+    </string-array>
+
 </resources>

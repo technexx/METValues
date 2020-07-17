@@ -16,13 +16,45 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final Button basic = findViewById(R.id.basic);
+        final Button met = findViewById(R.id.met);
+        final Button custom = findViewById(R.id.custom);
         final Button imperial = findViewById(R.id.imperial);
         final Button metric = findViewById(R.id.metric);
 
         final FragmentManager fm  = getSupportFragmentManager();
         final BasicFragment basicFragment = new BasicFragment();
+        final MetFragment metFragment = new MetFragment();
+        final CustomFragment customFragment = new CustomFragment();
 
         final Bundle b = new Bundle();
+
+        basic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fm.beginTransaction()
+                        .replace(R.id.main_fragment, basicFragment)
+                        .commit();
+            }
+        });
+
+        met.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fm.beginTransaction()
+                        .replace(R.id.main_fragment, metFragment)
+                        .commit();
+            }
+        });
+
+        custom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fm.beginTransaction()
+                        .replace(R.id.main_fragment, customFragment)
+                        .commit();
+            }
+        });
 
         imperial.setOnClickListener(new View.OnClickListener() {
             @Override

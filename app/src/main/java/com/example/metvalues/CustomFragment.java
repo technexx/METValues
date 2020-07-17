@@ -1,4 +1,6 @@
 package com.example.metvalues;
 
-public class CustomFragment {
+import androidx.fragment.app.Fragment;
+
+public class CustomFragment extends Fragment {
 }
