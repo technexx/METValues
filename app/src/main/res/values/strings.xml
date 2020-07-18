@@ -100,9 +100,6 @@
         <item>Yoga - Power </item>
         <item>Yoga - Nadisodhana</item>
         <item>Yoga - Surya Namaskar</item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
     </string-array>
 
     <string-array name="dancing">
@@ -118,8 +115,7 @@
     </string-array>
 
     <string-array name="fishing">
-        <item>Fishing - sitting </item>
-        <item>Fishing - standing </item>
+        <item>Fishing - general</item>
         <item>Hunting - general  </item>
         <item>Rifle exercises </item>
         <item> </item>
@@ -166,14 +162,14 @@
         <item>Cleaning gutters </item>
         <item>Hammering nails </item>
         <item>Painting - general </item>
-        <item>Roofing - genral </item>
+        <item>Plumbing - general </item>
+        <item>Roofing - general </item>
         <item>Sanding floors with power sander </item>
         <item>Sharpening tools </item>
-        <item> </item>
+        <item>Washing car </item>
     </string-array>
 
     <string-array name="garden">
-        <item>Washing and waxing car </item>
         <item>Chopping wood - moderate effort </item>
         <item>Chopping wood - vigorous effort </item>
         <item>Carrying or loading lumber - moderate effort </item>
@@ -188,13 +184,14 @@
         <item>Mowing lawn - riding mower </item>
         <item>Shoveling snow - by hand with moderate effort </item>
         <item>Shoveling snow - by hand with vigorous effort</item>
-        <item>Shoveling snow -  </item>
-        <item>Shoveling - general </item>
+        <item>Shoveling dirt - general </item>
         <item>Trimming shrubs or trees - manual cutter </item>
         <item>Trimming shrubs or trees - power cutter </item>
         <item>Yard work - general at light effort </item>
         <item>Yard work - general at moderate effort </item>
         <item>Yard work - general at vigorous effort</item>
+        <item>Picking fruit - moderate effort</item>
+        <item>Picking fruit - vigorous effort</item>
     </string-array>
 
     <string-array name="misc">
@@ -206,7 +203,6 @@
         <item>Reading, texting, talking - standing </item>
         <item>Arts and crafts - sitting at light effort </item>
         <item>Arts and crafts - sitting at moderate effort </item>
-        <item>Arts and crafts - sitting at vigorous effort </item>
         <item>Arts and crafts - standing at light effort </item>
         <item>Arts and crafts - standing at moderate effort </item>
         <item>Arts and crafts - standing at vigorous effort </item>
@@ -312,16 +308,28 @@
     </string-array>
 
     <string-array name="sexual_activity">
-        <item>Sex - light effort</item>
-        <item>Sex - moderate effort</item>
-        <item>Sex - vigorous effort</item>
+        <item>Sexual Activity - light effort</item>
+        <item>Sexual Activity - moderate effort</item>
+        <item>Sexual Activity - vigorous effort</item>
     </string-array>
 
     <string-array name="sports">
+        <item>Archery - general </item>
+        <item>Badminton - casual </item>
+        <item>Badminton - competitive </item>
+        <item>Basketball - shooting baskets only </item>
+        <item>Basketball - general </item>
+        <item>Basketball - competitive </item>
+        <item>Billiards - general</item>
+        <item>Bowling - general </item>
+        <item>Boxing - punching bag </item>
+        <item>Boxing - sparring </item>
+        <item>Boxing - in ring </item>
+        <item>Broomball </item>
         <item>Children\'s games (e.g. hopscotch, dodgeball, 4-square) at moderate effort </item>
         <item>Cheerleading or gymnastics - competitive </item>
         <item>Cricket - general </item>
-        <item>croquet - general </item>
+        <item>Croquet - general </item>
         <item>Curling - general </item>
         <item>Darts - general </item>
         <item>Auto racing - open wheel </item>
@@ -358,16 +366,19 @@
         <item>Rodeo sports - light effort </item>
         <item>Rodeo sports - moderate effort </item>
         <item>Rodeo sports - vigorous effort </item>
+        <item>Jumping rope - slow pace</item>
+        <item>Jumping rope - moderate pace</item>
+        <item>Jumping rope - fast pace</item>
         <item>Rugby - general </item>
         <item>Rugby - competitive </item>
-        <item>Shuffleboard </item>
-        <item>Skateboarding - general </item>
-        <item>Skateboarding - competitive </item>
-        <item>Rollerskating </item>
+        <item>Rollerskating  - general</item>
         <item>Rollerblading - recreational pace </item>
         <item>Rollerblading - moderate pace </item>
         <item>Rollerblading - fast pace </item>
         <item>Rollerblading - intense pace </item>
+        <item>Shuffleboard </item>
+        <item>Skateboarding - general </item>
+        <item>Skateboarding - competitive </item>
         <item>Skydiving or base jumping </item>
         <item>Soccer - casual </item>
         <item>Soccer - competitive </item>
@@ -387,23 +398,23 @@
     </string-array>
 
     <string-array name="walking">
-        <item>Backpacking - general\</item>
+        <item>Backpacking - general</item>
         <item>Climbing hills (no load) </item>
         <item>Climbing hills (1 to 9 lb load) </item>
         <item>Climbing hills (10 to 20 lb load) </item>
         <item>Climbing hills (21 to 42 lb load) </item>
         <item>Climbing hills (42+ lb load) </item>
         <item>Climbing stairs - general </item>
-        <item>Descending stairs - general </item>
         <item>Using crutches </item>
         <item>Hiking - general </item>
         <item>Marching - moderate speed </item>
         <item>Marching - rapid speed </item>
-        <item>Wheelchair pushing </item>
+        <item>Wheelchair pushing - non-occupational </item>
         <item>Walking - 2.5 mph </item>
         <item>Walking - 3 mph </item>
         <item>Walking - 3.5 mph </item>
         <item>Walking - 4 mph </item>
+        <item>Walking - 4.5 mph</item>
         <item>Walking - 5 mph </item>
         <item>Walking (backwards) - 3.5 mph</item>
         <item> </item>
@@ -415,7 +426,7 @@
         <item>Canoeing - rowing with light effort </item>
         <item>Canoeing - rowing with moderate effort </item>
         <item>Canoeing - rowing with vigorous effort </item>
-        <item>Diving - genera; </item>
+        <item>Diving - general </item>
         <item>Kayaking -general </item>
         <item>Paddle boating - general</item>
         <item>Sailing - general </item>
@@ -432,11 +443,10 @@
         <item>Swimming (breaststroke) - general </item>
         <item>Swimming - (breaststroke) competitive </item>
         <item>Swimming (butterfly) - general </item>
-        <item>Swimming - (butterfly) competitive </item>
+        <item>Swimming - (sidestroke) - general</item>
         <item>Swimming (synchronized) - general </item>
         <item>Swimming (treading water ) - moderate effort </item>
         <item>Swimming (treading water ) - vigorous effort </item>
-        <item>Tubing - general </item>
         <item>Water aerobics - general </item>
         <item>Water polo - general </item>
         <item>Water volleyball - general </item>
@@ -454,9 +464,10 @@
         <item>Ice skating - competitive</item>
         <item>Ice skating (dancing) </item>
         <item>Skiing - general </item>
-        <item>Skiing (cross country) - light effort </item>
-        <item>Skiing (cross country) - moderate effort </item>
-        <item>Skiing (cross country) - vigorous effort </item>
+        <item>Skiing (cross country) - 2.5 mph </item>
+        <item>Skiing (cross country) - 4.0 to 4.9 mph </item>
+        <item>Skiing (cross country) - 5.0 to 7.9 mph </item>
+        <item>Skiing (cross country) - over 8 mph</item>
         <item>Sledding or tobogganing - general</item>
         <item>Snow shoeing - moderate effort </item>
         <item>Snow shoeing - vigorous effort </item>
@@ -466,16 +477,414 @@
     </string-array>
 
     <string-array name="bicycle_values">
+        <item>14.0 </item>
+        <item>16.0 </item>
+        <item>8.5 </item>
+        <item>8.5 </item>
+        <item>4.0 </item>
+        <item>7.5 </item>
+        <item>3.5</item>
+        <item>5.8 </item>
+        <item>6.8 </item>
+        <item>8.0 </item>
+        <item>10.0 </item>
+        <item>12.0 </item>
+        <item>15.8 </item>
+        <item>5.0 </item>
         <item> </item>
+    </string-array>
+
+    <string-array name="conditioning_values">
+        <item>2.3 </item>
+        <item>3.8 </item>
+        <item>7.2 </item>
+        <item>5.0 </item>
+        <item>3.5 </item>
+        <item>4.8 </item>
+        <item>6.8 </item>
+        <item>8.8 </item>
+        <item>11.0 </item>
+        <item>14.0 </item>
+        <item>2.8 </item>
+        <item>3.8 </item>
+        <item>8.0 </item>
+        <item>4.3 </item>
+        <item>8.0 </item>
+        <item>5.0 </item>
+        <item>3.5 </item>
+        <item>5.0 </item>
+        <item>6.0 </item>
+        <item>12.3 </item>
+        <item>4.8 </item>
+        <item>7.0 </item>
+        <item>8.5 </item>
+        <item>12.0 </item>
+        <item>6.8 </item>
+        <item>2.3 </item>
+        <item>3.0 </item>
+        <item>5.3 </item>
+        <item>2.3 </item>
+        <item>4.0 </item>
+        <item>6.0 </item>
+        <item>2.5 </item>
+        <item>4.0 </item>
+        <item>2.0 </item>
+        <item>3.3 </item>
+    </string-array>
+
+    <string-array name="dancing_values">
+        <item>5.0 </item>
+        <item>6.8 </item>
+        <item>4.8 </item>
+        <item>5.0 </item>
+        <item>7.3 </item>
+        <item>8.5 </item>
         <item> </item>
+        <item>3.0 </item>
+        <item>5.5 </item>
+        <item>11.3 </item>
+    </string-array>
+
+    <string-array name="fishing_values">
+        <item>3.5 </item>
+        <item>5.0 </item>
+        <item>2.4 </item>
+    </string-array>
+
+    <string-array name="home_values">
+        <item>2.3 </item>
+        <item>3.8 </item>
+        <item>2.5 </item>
+        <item>3.5 </item>
+        <item>2.8 </item>
+        <item>3.5 </item>
+        <item>4.3 </item>
+        <item>2.3 </item>
+        <item>2.5 </item>
+        <item>3.3 </item>
+        <item>1.8 </item>
+        <item>1.3 </item>
+        <item>2.9 </item>
+        <item>2.0 </item>
+        <item>4.0 </item>
+        <item>3.3 </item>
+        <item>2.0 </item>
+        <item>3.5 </item>
+        <item>6.5 </item>
+        <item>2.5 </item>
+        <item>2.2 </item>
+        <item>2.8 </item>
+        <item>3.5 </item>
+        <item>3.0</item>
+        <item>4.0 </item>
+        <item>5.0 </item>
+        <item>2.0 </item>
+        <item>3.0 </item>
+        <item>2.3 </item>
+        <item>3.5 </item>
+        <item>3.0 </item>
+        <item>2.3 </item>
+        <item>4.0 </item>
+        <item>2.5 </item>
+        <item>4.5</item>
+        <item>6.0 </item>
+        <item>5.0 </item>
+        <item>3.0 </item>
+        <item>4.5 </item>
+        <item>3.0 </item>
+        <item>6.0 </item>
+        <item>4.5 </item>
+        <item>2.0 </item>
+        <item>2.0 </item>
+    </string-array>
+
+    <string-array name="garden_values">
+        <item>4.5 </item>
+        <item>6.3 </item>
+        <item>3.3 </item>
+        <item>5.5 </item>
+        <item>3.5 </item>
+        <item>5.0 </item>
+        <item>7.8</item>
+        <item>2.0 </item>
+        <item>4.3 </item>
+        <item>6.0 </item>
+        <item>5.0 </item>
+        <item>4.5 </item>
+        <item>5.3 </item>
+        <item>7.0 </item>
+        <item>5.5 </item>
+        <item>4.0 </item>
+        <item>3.5 </item>
+        <item>3.0 </item>
+        <item>4.0 </item>
+        <item>6.0 </item>
+        <item>3.5</item>
+        <item>4.5</item>
+    </string-array>
+
+    <string-array name="misc_values">
+        <item>1.5 </item>
+        <item>2.5 </item>
+        <item>1.3 </item>
+        <item>1.8 </item>
+        <item>1.5 </item>
+        <item>1.8 </item>
+        <item>1.8 </item>
+        <item>3.0 </item>
+        <item>2.5 </item>
+        <item>3.3 </item>
         <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
-        <item> </item>
+        <item>3.5 </item>
+    </string-array>
+
+    <string-array name="music_values">
+        <item>1,8 </item>
+        <item>2.3 </item>
+        <item>2.3 </item>
+        <item>2.5 </item>
+        <item>3.8 </item>
+        <item>2.0 </item>
+        <item>1.8 </item>
+        <item>2.0 </item>
+        <item>2.3 </item>
+        <item>3.5 </item>
+        <item>1.8 </item>
+        <item>2.5 </item>
+        <item>1.8 </item>
+        <item>2.0 </item>
+        <item>3.0 </item>
+        <item>4.0 </item>
+        <item>4.5</item>
+    </string-array>
+
+    <string-array name="occupation_values">
+        <item>3.0 </item>
+        <item>2.0 </item>
+        <item>4.0 </item>
+        <item>2.3 </item>
+        <item>2.0 </item>
+        <item>2.5 </item>
+        <item>4.3 </item>
+        <item>7.0 </item>
+        <item>4.0</item>
+        <item>5.5 </item>
+        <item>2.5 </item>
+        <item>4.0 </item>
+        <item>3.3 </item>
+        <item>2.0 </item>
+        <item>4.8 </item>
+        <item>7.8 </item>
+        <item>8.0 </item>
+        <item>3.5 </item>
+        <item>5.0 </item>
+        <item>7.0 </item>
+        <item>4.0 </item>
+        <item>1.8 </item>
+        <item>4.3 </item>
+        <item>7.3 </item>
+        <item>3.8 </item>
+        <item>5.8 </item>
+        <item>7.3 </item>
+        <item>4.0 </item>
+        <item>3.0 </item>
+        <item>5.0 </item>
+        <item>2.8 </item>
+        <item>4.5 </item>
+        <item>6.5 </item>
+        <item>2.5 </item>
+        <item>4.3 </item>
+        <item>4.0 </item>
+        <item>4.5 </item>
+        <item>3.3 </item>
+        <item>3.0 </item>
+        <item>2.0 </item>
+        <item>5.0 </item>
+        <item>6.5 </item>
+        <item>3.0 </item>
+        <item>4.5 </item>
+        <item>4.5 </item>
+        <item>5.3 </item>
+        <item>2.5 </item>
+        <item>2.0 </item>
+    </string-array>
+
+    <string-array name="running_values">
+        <item>6.0 </item>
+        <item>8.3 </item>
+        <item>9.0 </item>
+        <item>9.8 </item>
+        <item>10.5 </item>
+        <item>11.0 </item>
+        <item>11.5 </item>
+        <item>11.8 </item>
+        <item>12.3 </item>
+        <item>12.8 </item>
+        <item>14.5 </item>
+        <item>16.0 </item>
+        <item>19.0 </item>
+        <item>19.8 </item>
+        <item>23.0 </item>
+    </string-array>
+
+    <string-array name="self_care_values">
+        <item>2.3 </item>
+        <item>1.8 </item>
+        <item>1.5 </item>
+        <item>1.5 </item>
+        <item>2.5 </item>
+        <item>2.0 </item>
+    </string-array>
+
+    <string-array name="sex_values">
+        <item>1.3 </item>
+        <item>1.8 </item>
+        <item>2.8 </item>
+    </string-array>
+
+    <string-array name="sports_values">
+        <item>5.8 </item>
+        <item>6.0 </item>
+        <item>4.8 </item>
+        <item>3.3 </item>
+        <item>4.0 </item>
+        <item>2.5 </item>
+        <item>8.5 </item>
+        <item>6.0 </item>
+        <item>4.0 </item>
+        <item>8.0 </item>
+        <item>8.0 </item>
+        <item>2.5 </item>
+        <item>3.0 </item>
+        <item>8.0 </item>
+        <item>4.8 </item>
+        <item>3.8 </item>
+        <item>4.0 </item>
+        <item>12.0 </item>
+        <item>8.0 </item>
+        <item>3.6 </item>
+        <item>7.8 </item>
+        <item>8.0 </item>
+        <item>10.0 </item>
+        <item>5.5 </item>
+        <item>5.3 </item>
+        <item>10.3 </item>
+        <item>4.0 </item>
+        <item>7.0 </item>
+        <item>8.0 </item>
+        <item>3.3 </item>
+        <item>4.0 </item>
+        <item>6.0 </item>
+        <item>10.0 </item>
+        <item>8.0 </item>
+        <item>4.0 </item>
+        <item>5.5 </item>
+        <item>7.0 </item>
+        <item>8.8 </item>
+        <item>11.8 </item>
+        <item>12.3 </item>
+        <item>6.3 </item>
+        <item>8.3 </item>
+        <item>7.0 </item>
+        <item>7.5 </item>
+        <item>9.8 </item>
+        <item>12.3 </item>
+        <item>14.0 </item>
+        <item>3.0 </item>
+        <item>5.0 </item>
+        <item>6.0 </item>
+        <item>3.5 </item>
+        <item>7.0 </item>
+        <item>10.0 </item>
+        <item>5.0 </item>
+        <item>12.0 </item>
+        <item>4.0 </item>
+        <item>7.3 </item>
+        <item>3.5 </item>
+        <item>4.5 </item>
+        <item>4.0 </item>
+        <item>6.0 </item>
+        <item>8.0 </item>
+        <item>6.0 </item>
+        <item>4.0 </item>
+        <item>6.0 </item>
+        <item>10.0 </item>
+    </string-array>
+
+    <string-array name="walking_values">
+        <item>7.0 </item>
+        <item>6.3 </item>
+        <item>6.5 </item>
+        <item>7.3 </item>
+        <item>8.3 </item>
+        <item>9.0 </item>
+        <item>5.0 </item>
+        <item>5.3 </item>
+        <item>4.5 </item>
+        <item>8.0 </item>
+        <item>3.8 </item>
+        <item>3.0 </item>
+        <item>3.5 </item>
+        <item>4.3 </item>
+        <item>5.0 </item>
+        <item>7.0 </item>
+        <item>8.3 </item>
+        <item>6.0 </item>
+    </string-array>
+
+    <string-array name="water_values">
+        <item>2.5</item>
+        <item>3.5 </item>
+        <item>2.8 </item>
+        <item>5.8 </item>
+        <item>12.5 </item>
+        <item>5.0 </item>
+        <item>4.0 </item>
+        <item>3.3 </item>
+        <item>4.5 </item>
+        <item>6.0 </item>
+        <item>7.0 </item>
+        <item>11.8 </item>
+        <item>15.8 </item>
+        <item>5.0 </item>
+        <item>3.0 </item>
+        <item>5.0 </item>
+        <item>4.8 </item>
+        <item>9.5 </item>
+        <item>5.3 </item>
+        <item>10.3 </item>
+        <item>13.8 </item>
+        <item>7.0</item>
+        <item>8.0 </item>
+        <item>3.5 </item>
+        <item>9.8 </item>
+        <item>5.5 </item>
+        <item>10.0 </item>
+        <item>3.0 </item>
+        <item>9.8 </item>
+        <item>2.5 </item>
+        <item>4.5 </item>
+        <item>6.8 </item>
+        <item>5.0 </item>
+        <item>13.5 </item>
+    </string-array>
+
+    <string-array name="winter_values">
+        <item>7.5 </item>
+        <item>7.0 </item>
+        <item>13.3 </item>
+        <item>14.0 </item>
+        <item>7.0 </item>
+        <item>6.8 </item>
+        <item>9.0 </item>
+        <item>12.5 </item>
+        <item>15.0 </item>
+        <item>7.0 </item>
+        <item>5.3 </item>
+        <item>10.0 </item>
+        <item>5.3 </item>
+        <item>7.5 </item>
+        <item>2.5 </item>
     </string-array>
 
     <string-array name="holder">
@@ -490,6 +899,4 @@
         <item> </item>
         <item> </item>
     </string-array>
-
-
 </resources>
