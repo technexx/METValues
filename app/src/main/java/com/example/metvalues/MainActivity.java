@@ -10,6 +10,9 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private boolean isMetric;
+    private boolean onBasic = true;
+    private boolean onMet;
+    private boolean onCustom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, basicFragment)
                         .commit();
+                onBasic = true;
+                onMet = false;
+                onCustom = false;
             }
         });
 
@@ -44,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, metFragment)
                         .commit();
+                onMet = true;
+                onBasic = false;
+                onCustom = false;
             }
         });
 
@@ -53,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, customFragment)
                         .commit();
+                onCustom = true;
+                onBasic = false;
+                onCustom = false;
             }
         });
 
@@ -62,11 +74,29 @@ public class MainActivity extends AppCompatActivity {
                 imperial.setBackgroundColor(getResources().getColor(R.color.off_white));
                 metric.setBackgroundColor(getResources().getColor(R.color.White));
                 b.putBoolean("isMetric", false);
-                basicFragment.setArguments(b);
-                fm.beginTransaction()
-                        .detach(basicFragment)
-                        .attach(basicFragment)
-                        .commit();
+
+                if (onBasic) {
+                    basicFragment.setArguments(b);
+                    fm.beginTransaction()
+                            .detach(basicFragment)
+                            .attach(basicFragment)
+                            .commit();
+                }
+                if (onMet) {
+                    metFragment.setArguments(b);
+                    fm.beginTransaction()
+                            .detach(metFragment)
+                            .attach(metFragment)
+                            .commit();
+                }
+                if (onCustom) {
+                    customFragment.setArguments(b);
+                    fm.beginTransaction()
+                            .detach(customFragment)
+                            .attach(customFragment)
+                            .commit();
+                }
+
             }
         });
 

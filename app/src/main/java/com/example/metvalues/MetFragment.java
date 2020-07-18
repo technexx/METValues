@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -23,20 +24,20 @@ import java.util.List;
 
 public class MetFragment extends Fragment {
 
+    private Adapter subCategoryAdapter;
     private List<String> total_list;
-    private List<String> category_list;
-    private List<String> activity_list;
-    private List<String> score_list;
-    private List weight_list;
+
+
+    private boolean isMetric;
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.met_fragment, container, false);
 
-        weight_list = new ArrayList<>();
-        category_list = new ArrayList<>();
-        activity_list = new ArrayList<>();
-        score_list = new ArrayList<>();
+        List<String> weight_list = new ArrayList<>();
+        List<String> category_list = new ArrayList<>();
+        List<String> activity_list = new ArrayList<>();
+        List<String> score_list = new ArrayList<>();
 
         category_list.add(getString(R.string.bicycling));
         category_list.add(getString(R.string.conditioning));
@@ -93,24 +94,81 @@ public class MetFragment extends Fragment {
         Spinner category_spinner = root.findViewById(R.id.met_spinnerTwo);
         Spinner sub_category_spinner = root.findViewById(R.id.met_spinnerThree);
 
-//        if (isMetric) {
-//            for (int i=1; i<151; i++){
-//                weight_list.add((i) + " "  + "kg");
-//            }
-//            for (int i=1; i<201; i++) {
-//                height.add(i + " " + "cm");
-//            }
-//        } else {
-//            for (int i=1; i<301; i++) {
-//                weight_list.add(i + " " + "lb");
-//            }
-//            for (int i=1; i<101; i++) {
-//                height.add(i + " " + "inches");
-//            }
-//        }
+        Bundle args = getArguments();
+        if (args != null) {
+            isMetric = args.getBoolean("isMetric");
+        }
 
-//        ArrayAdapter<Integer> weightAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, )
+        if (isMetric) {
+            for (int i=1; i<151; i++){
+                weight_list.add((i) + " "  + "kg");
+            }
+        } else {
+            for (int i=1; i<301; i++) {
+                weight_list.add(i + " " + "lb");
+            }
+        }
+
+        ArrayAdapter<String> weightAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, weight_list);
         ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, category_list);
+
+        weightAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        weight_spinner.setAdapter(weightAdapter);
+        category_spinner.setAdapter(categoryAdapter);
+
+        switch (category_spinner.getSelectedItemPosition()) {
+            case 0:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, bicycling_values);
+                 break;
+            case 1:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, conditioning_values);
+                break;
+            case 2:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, dancing_values);
+                break;
+            case 3:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, fishing_values);
+                break;
+            case 4:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, home_values);
+                break;
+            case 5:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, garden_values);
+                break;
+            case 6:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, misc_values);
+                break;
+            case 7:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, music_values);
+                break;
+            case 8:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, occupational_values);
+                break;
+            case 9:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, running_values);
+                break;
+            case 10:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, bicycling_values);
+                break;
+            case 11:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, self_care_values);
+                break;
+            case 12:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, sexual_values);
+                break;
+            case 13:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, sports_values);
+                break;
+            case 14:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, walking_values);
+                break;
+            case 15:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, water_values);
+                break;
+            case 16:
+                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, winter_values);
+        }
 
         return root;
     }
