@@ -49,6 +49,7 @@ public class MetFragment extends Fragment {
 
         final int calories = 0;
         double hours = 0;
+        met = "0";
 
         category_list.add(getString(R.string.bicycling));
         category_list.add(getString(R.string.conditioning));
@@ -144,6 +145,33 @@ public class MetFragment extends Fragment {
         weight_spinner.setSelection(149);
         category_spinner.setSelection(0);
         sub_category_spinner.setSelection(0);
+
+        weight_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
+                double hoursVal = hours_selected * 60;
+
+                weightVal = weight_spinner.getSelectedItem().toString();
+                double metVal = Double.parseDouble(met);
+
+                String[] conv = weightVal.split(" ", 2);
+                String conv2 = conv[0];
+                double weightConv = Integer.parseInt(conv2);
+
+                if (!isMetric) {
+                    weightConv = weightConv / 2.205;
+                }
+
+                double calc = (metVal * 3.5 * weightConv) / 200;
+                final double finalCalc = calc * hoursVal;
+                calories_burned.setText(String.valueOf(Math.round(finalCalc)));
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         category_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
