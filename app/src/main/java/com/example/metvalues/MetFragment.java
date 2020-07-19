@@ -47,8 +47,8 @@ public class MetFragment extends Fragment {
         final TextView met_score = root.findViewById(R.id.met_score);
         calories_burned = root.findViewById(R.id.calories_burned);
 
-        double hours = 0;
         final int calories = 0;
+        double hours = 0;
 
         category_list.add(getString(R.string.bicycling));
         category_list.add(getString(R.string.conditioning));
@@ -262,9 +262,8 @@ public class MetFragment extends Fragment {
                         met = (winter_values[pos]);
                 }
                 met_score.setText(met);
-
-                double hours = Double.parseDouble(hours_spinner.getSelectedItem().toString());
-                double hoursVal = hours * 60;
+                double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
+                double hoursVal = hours_selected * 60;
 
                 weightVal = weight_spinner.getSelectedItem().toString();
                 double metVal = Double.parseDouble(met);
@@ -278,7 +277,7 @@ public class MetFragment extends Fragment {
                 }
 
                 double calc = (metVal * 3.5 * weightConv) / 200;
-                double finalCalc = calc * hoursVal;
+                final double finalCalc = calc * hoursVal;
                 calories_burned.setText(String.valueOf(Math.round(finalCalc)));
             }
 
@@ -291,6 +290,23 @@ public class MetFragment extends Fragment {
         hours_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
+                double hoursVal = hours_selected * 60;
+
+                weightVal = weight_spinner.getSelectedItem().toString();
+                double metVal = Double.parseDouble(met);
+
+                String[] conv = weightVal.split(" ", 2);
+                String conv2 = conv[0];
+                double weightConv = Integer.parseInt(conv2);
+
+                if (!isMetric) {
+                    weightConv = weightConv / 2.205;
+                }
+
+                double calc = (metVal * 3.5 * weightConv) / 200;
+                final double finalCalc = calc * hoursVal;
+                calories_burned.setText(String.valueOf(Math.round(finalCalc)));
 
             }
 
