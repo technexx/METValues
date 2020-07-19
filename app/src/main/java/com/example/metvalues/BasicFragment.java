@@ -172,5 +172,4 @@ public class BasicFragment extends Fragment {
         });
         return root;
     }
-
 }
