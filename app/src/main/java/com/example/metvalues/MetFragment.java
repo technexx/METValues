@@ -263,7 +263,12 @@ public class MetFragment extends Fragment {
                 }
                 met_score.setText(met);
 
+                double hours = Double.parseDouble(hours_spinner.getSelectedItem().toString());
+                double hoursVal = hours * 60;
+
                 weightVal = weight_spinner.getSelectedItem().toString();
+                double metVal = Double.parseDouble(met);
+
                 String[] conv = weightVal.split(" ", 2);
                 String conv2 = conv[0];
                 double weightConv = Integer.parseInt(conv2);
@@ -272,9 +277,21 @@ public class MetFragment extends Fragment {
                     weightConv = weightConv / 2.205;
                 }
 
-                double calc = (double) ( 3.5 * weightConv) / 200;
-                int finalCalc = (int) Math.round(calc);
-                calories_burned.setText(String.valueOf(finalCalc));
+                double calc = (metVal * 3.5 * weightConv) / 200;
+                double finalCalc = calc * hoursVal;
+                calories_burned.setText(String.valueOf(Math.round(finalCalc)));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        hours_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
             }
 
             @Override
