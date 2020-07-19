@@ -120,17 +120,26 @@ public class MetFragment extends Fragment {
         }
         Log.i("hours", String.valueOf(hours_list));
 
+        //Todo: Add metric conversion of MET from metric.
+
         ArrayAdapter<String> weightAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, weight_list);
         ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, category_list);
+        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, bicycling);
         ArrayAdapter<Double> hoursAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, hours_list);
 
         weightAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        subCategoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         hoursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         weight_spinner.setAdapter(weightAdapter);
         category_spinner.setAdapter(categoryAdapter);
+        sub_category_spinner.setAdapter(subCategoryAdapter);
         hours_spinner.setAdapter(hoursAdapter);
+
+        weight_spinner.setSelection(149);
+        category_spinner.setSelection(0);
+        sub_category_spinner.setSelection(0);
 
         category_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -211,9 +220,9 @@ public class MetFragment extends Fragment {
         });
 
         sub_category_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            int pos = sub_category_spinner.getSelectedItemPosition();
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                final int pos = sub_category_spinner.getSelectedItemPosition();
                 switch (catNumber) {
                     case 0:
                         met_score.setText(bicycling_values[pos]); break;
