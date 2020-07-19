@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class MetFragment extends Fragment {
 
-    private Adapter subCategoryAdapter;
+    private ArrayAdapter subCategoryAdapter;
     private List<String> total_list;
 
 
@@ -56,43 +57,43 @@ public class MetFragment extends Fragment {
         category_list.add(getString(R.string.water));
         category_list.add(getString(R.string.winter));
 
-        String[] bicycling = getResources().getStringArray(R.array.bicycling);
-        String[] conditioning = getResources().getStringArray(R.array.conditioning);
-        String[] dancing = getResources().getStringArray(R.array.dancing);
-        String[] fishing = getResources().getStringArray(R.array.fishing);
-        String[] home = getResources().getStringArray(R.array.home);
-        String[] garden  = getResources().getStringArray(R.array.garden);
-        String[] misc = getResources().getStringArray(R.array.misc);
-        String[] music = getResources().getStringArray(R.array.music);
-        String[] occupational = getResources().getStringArray(R.array.occupation);
-        String[] running = getResources().getStringArray(R.array.running);
-        String[] self_care = getResources().getStringArray(R.array.self_care);
-        String[] sexual = getResources().getStringArray(R.array.sex_values);
-        String[] sports = getResources().getStringArray(R.array.sports);
-        String[] walking = getResources().getStringArray(R.array.walking);
-        String[] water = getResources().getStringArray(R.array.walking);
-        String[] winter = getResources().getStringArray(R.array.winter);
+        final String[] bicycling = getResources().getStringArray(R.array.bicycling);
+        final String[] conditioning = getResources().getStringArray(R.array.conditioning);
+        final String[] dancing = getResources().getStringArray(R.array.dancing);
+        final String[] fishing = getResources().getStringArray(R.array.fishing);
+        final String[] home = getResources().getStringArray(R.array.home);
+        final String[] garden  = getResources().getStringArray(R.array.garden);
+        final String[] misc = getResources().getStringArray(R.array.misc);
+        final String[] music = getResources().getStringArray(R.array.music);
+        final String[] occupational = getResources().getStringArray(R.array.occupation);
+        final String[] running = getResources().getStringArray(R.array.running);
+        final String[] self_care = getResources().getStringArray(R.array.self_care);
+        final String[] sexual = getResources().getStringArray(R.array.sexual_activity);
+        final String[] sports = getResources().getStringArray(R.array.sports);
+        final String[] walking = getResources().getStringArray(R.array.walking);
+        final String[] water = getResources().getStringArray(R.array.walking);
+        final String[] winter = getResources().getStringArray(R.array.winter);
 
-        String[] bicycling_values = getResources().getStringArray(R.array.bicycle_values);
-        String[] conditioning_values = getResources().getStringArray(R.array.conditioning_values);
-        String[] dancing_values = getResources().getStringArray(R.array.dancing_values);
-        String[] fishing_values = getResources().getStringArray(R.array.fishing_values);
-        String[] home_values = getResources().getStringArray(R.array.home_values);
-        String[] garden_values = getResources().getStringArray(R.array.garden_values);
-        String[] misc_values = getResources().getStringArray(R.array.misc_values);
-        String[] music_values = getResources().getStringArray(R.array.music_values);
-        String[] occupational_values = getResources().getStringArray(R.array.occupation_values);
-        String[] running_values = getResources().getStringArray(R.array.running_values);
-        String[] self_care_values = getResources().getStringArray(R.array.self_care_values);
-        String[] sexual_values = getResources().getStringArray(R.array.sex_values);
-        String[] sports_values = getResources().getStringArray(R.array.sports_values);
-        String[] walking_values = getResources().getStringArray(R.array.walking_values);
-        String[] water_values = getResources().getStringArray(R.array.walking_values);
-        String[] winter_values = getResources().getStringArray(R.array.winter_values);
+        final String[] bicycling_values = getResources().getStringArray(R.array.bicycle_values);
+        final String[] conditioning_values = getResources().getStringArray(R.array.conditioning_values);
+        final String[] dancing_values = getResources().getStringArray(R.array.dancing_values);
+        final String[] fishing_values = getResources().getStringArray(R.array.fishing_values);
+        final String[] home_values = getResources().getStringArray(R.array.home_values);
+        final String[] garden_values = getResources().getStringArray(R.array.garden_values);
+        final String[] misc_values = getResources().getStringArray(R.array.misc_values);
+        final String[] music_values = getResources().getStringArray(R.array.music_values);
+        final String[] occupational_values = getResources().getStringArray(R.array.occupation_values);
+        final String[] running_values = getResources().getStringArray(R.array.running_values);
+        final String[] self_care_values = getResources().getStringArray(R.array.self_care_values);
+        final String[] sexual_values = getResources().getStringArray(R.array.sex_values);
+        final String[] sports_values = getResources().getStringArray(R.array.sports_values);
+        final String[] walking_values = getResources().getStringArray(R.array.walking_values);
+        final String[] water_values = getResources().getStringArray(R.array.walking_values);
+        final String[] winter_values = getResources().getStringArray(R.array.winter_values);
 
-        Spinner weight_spinner = root.findViewById(R.id.met_spinnerOne);
-        Spinner category_spinner = root.findViewById(R.id.met_spinnerTwo);
-        Spinner sub_category_spinner = root.findViewById(R.id.met_spinnerThree);
+        final Spinner weight_spinner = root.findViewById(R.id.met_spinnerOne);
+        final Spinner category_spinner = root.findViewById(R.id.met_spinnerTwo);
+        final  Spinner sub_category_spinner = root.findViewById(R.id.met_spinnerThree);
 
         Bundle args = getArguments();
         if (args != null) {
@@ -114,61 +115,72 @@ public class MetFragment extends Fragment {
 
         weightAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         weight_spinner.setAdapter(weightAdapter);
         category_spinner.setAdapter(categoryAdapter);
 
-        switch (category_spinner.getSelectedItemPosition()) {
-            case 0:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, bicycling_values);
-                 break;
-            case 1:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, conditioning_values);
-                break;
-            case 2:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, dancing_values);
-                break;
-            case 3:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, fishing_values);
-                break;
-            case 4:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, home_values);
-                break;
-            case 5:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, garden_values);
-                break;
-            case 6:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, misc_values);
-                break;
-            case 7:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, music_values);
-                break;
-            case 8:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, occupational_values);
-                break;
-            case 9:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, running_values);
-                break;
-            case 10:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, bicycling_values);
-                break;
-            case 11:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, self_care_values);
-                break;
-            case 12:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, sexual_values);
-                break;
-            case 13:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, sports_values);
-                break;
-            case 14:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, walking_values);
-                break;
-            case 15:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, water_values);
-                break;
-            case 16:
-                subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, winter_values);
-        }
+        category_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (category_spinner.getSelectedItemPosition()) {
+                    case 0:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, bicycling);
+                        break;
+                    case 1:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, conditioning);
+                        break;
+                    case 2:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, dancing);
+                        break;
+                    case 3:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, fishing);
+                        break;
+                    case 4:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, home);
+                        break;
+                    case 5:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, garden);
+                        break;
+                    case 6:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, misc);
+                        break;
+                    case 7:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, music);
+                        break;
+                    case 8:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, occupational);
+                        break;
+                    case 9:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, running);
+                        break;
+                    case 10:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, self_care);
+                        break;
+                    case 11:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, sexual);
+                        break;
+                    case 12:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, sports);
+                        break;
+                    case 13:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, water);
+                        break;
+                    case 14:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, walking);
+                        break;
+                    case 15:
+                        subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, winter);
+                }
+                subCategoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                sub_category_spinner.setAdapter(subCategoryAdapter);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         return root;
     }

@@ -29,6 +29,8 @@
 
     <string name="categories">Categories:</string>
     <string name="values">MET Values:</string>
+    <string name="hours_spent">Hours Spent:</string>
+    <string name="met_score">MET Score:</string>
 
     <string name="bicycling">Bicycling</string>
     <string name="conditioning">Conditioning Exercise</string>
@@ -90,7 +92,7 @@
         <item>Stationary bicycle - 51 to 89 watts - light to moderate effort </item>
         <item>Stationary bicycle - 90 to 100 watts - moderate to vigorous effort </item>
         <item>Stationary bicycle - 101 to 160 watts - vigorous effort </item>
-        <item>Stationary bicycle - 161 to 200 watts - vigorous effort </item>
+        <item>Stationary bicycle - 161 to 220 watts - vigorous effort </item>
         <item>Stationary bicycle - 201 to 270 watts - vigorous effort </item>
         <item>Stationary bicycle - spin class </item>
 
@@ -98,7 +100,7 @@
 
         <item>Rowing - 100 watts</item>
         <item>Rowing - 150 watts</item>
-        <item>Rowing - 200 watts</item>
+        <item>Rowing - 220 watts</item>
 
         <item>Ski machine - general </item>
 

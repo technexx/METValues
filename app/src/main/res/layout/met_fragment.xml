@@ -12,12 +12,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="12dp"
+        android:layout_marginStart="4dp"
         android:textSize="20sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/categories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/categories"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/met_weight"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="4dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/hours_spent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hours_spent"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/categories"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="4dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/met_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/met_score"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/hours_spent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="96dp"
+        android:layout_marginStart="4dp">
     </TextView>
 
     <Spinner
         android:id="@+id/met_spinnerOne"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,19 +62,9 @@
         android:layout_marginStart="150dp">
     </Spinner>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/categories"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/met_weight"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp">
-    </TextView>
-
     <Spinner
         android:id="@+id/met_spinnerTwo"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/met_spinnerOne"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +74,7 @@
 
     <Spinner
         android:id="@+id/met_spinnerThree"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/met_spinnerTwo"
         app:layout_constraintStart_toStartOf="parent"
