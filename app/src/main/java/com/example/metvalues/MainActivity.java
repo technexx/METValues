@@ -106,11 +106,28 @@ public class MainActivity extends AppCompatActivity {
                 imperial.setBackgroundColor(getResources().getColor(R.color.White));
                 metric.setBackgroundColor(getResources().getColor(R.color.off_white));
                 b.putBoolean("isMetric", true);
-                basicFragment.setArguments(b);
-                fm.beginTransaction()
-                        .detach(basicFragment)
-                        .attach(basicFragment)
-                        .commit();
+
+                if (onBasic) {
+                    basicFragment.setArguments(b);
+                    fm.beginTransaction()
+                            .detach(basicFragment)
+                            .attach(basicFragment)
+                            .commit();
+                }
+                if (onMet) {
+                    metFragment.setArguments(b);
+                    fm.beginTransaction()
+                            .detach(metFragment)
+                            .attach(metFragment)
+                            .commit();
+                }
+                if (onCustom) {
+                    customFragment.setArguments(b);
+                    fm.beginTransaction()
+                            .detach(customFragment)
+                            .attach(customFragment)
+                            .commit();
+                }
             }
         });
         fm.beginTransaction()

@@ -31,6 +31,7 @@
     <string name="values">MET Values:</string>
     <string name="hours_spent">Hours Spent:</string>
     <string name="met_score">MET Score:</string>
+    <string name="calories_burned">Calories Burned:</string>
 
     <string name="bicycling">Bicycling</string>
     <string name="conditioning">Conditioning Exercise</string>
@@ -140,7 +141,6 @@
         <item>Fishing - general</item>
         <item>Hunting - general  </item>
         <item>Rifle exercises </item>
-        <item> </item>
     </string-array>
 
     <string-array name="home">

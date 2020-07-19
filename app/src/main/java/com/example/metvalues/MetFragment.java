@@ -30,6 +30,9 @@ public class MetFragment extends Fragment {
     private List<String> total_list;
     private boolean isMetric;
     private int catNumber;
+    private String met;
+    private TextView calories_burned;
+    private String weightVal;
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 
@@ -40,8 +43,12 @@ public class MetFragment extends Fragment {
         List<String> activity_list = new ArrayList<>();
         List<String> score_list = new ArrayList<>();
         List<Double> hours_list = new ArrayList<>();
+
         final TextView met_score = root.findViewById(R.id.met_score);
+        calories_burned = root.findViewById(R.id.calories_burned);
+
         double hours = 0;
+        final int calories = 0;
 
         category_list.add(getString(R.string.bicycling));
         category_list.add(getString(R.string.conditioning));
@@ -118,9 +125,6 @@ public class MetFragment extends Fragment {
             hours = hours + 0.5;
             hours_list.add(hours);
         }
-        Log.i("hours", String.valueOf(hours_list));
-
-        //Todo: Add metric conversion of MET from metric.
 
         ArrayAdapter<String> weightAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, weight_list);
         ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, category_list);
@@ -225,38 +229,52 @@ public class MetFragment extends Fragment {
                 final int pos = sub_category_spinner.getSelectedItemPosition();
                 switch (catNumber) {
                     case 0:
-                        met_score.setText(bicycling_values[pos]); break;
+                        met = (bicycling_values[pos]); break;
                     case 1:
-                        met_score.setText(conditioning_values[pos]); break;
+                        met = (conditioning_values[pos]); break;
                     case 2:
-                        met_score.setText(dancing_values[pos]); break;
+                        met = (dancing_values[pos]); break;
                     case 3:
-                        met_score.setText(fishing_values[pos]); break;
+                        met = (fishing_values[pos]); break;
                     case 4:
-                        met_score.setText(home_values[pos]); break;
+                        met = (home_values[pos]); break;
                     case 5:
-                        met_score.setText(garden_values[pos]); break;
+                        met = (garden_values[pos]); break;
                     case 6:
-                        met_score.setText(misc_values[pos]); break;
+                        met = (misc_values[pos]); break;
                     case 7:
-                        met_score.setText(music_values[pos]); break;
+                        met = (music_values[pos]); break;
                     case 8:
-                        met_score.setText(occupational_values[pos]); break;
+                        met = (occupational_values[pos]); break;
                     case 9:
-                        met_score.setText(running_values[pos]); break;
+                        met = (running_values[pos]); break;
                     case 10:
-                        met_score.setText(self_care_values[pos]); break;
+                        met = (self_care_values[pos]); break;
                     case 11:
-                        met_score.setText(sexual_values[pos]); break;
+                        met = (sexual_values[pos]); break;
                     case 12:
-                        met_score.setText(sports_values[pos]); break;
+                        met = (sports_values[pos]); break;
                     case 13:
-                        met_score.setText(walking_values[pos]); break;
+                        met = (walking_values[pos]); break;
                     case 14:
-                        met_score.setText(water_values[pos]); break;
+                        met = (water_values[pos]); break;
                     case 15:
-                        met_score.setText(winter_values[pos]);
+                        met = (winter_values[pos]);
                 }
+                met_score.setText(met);
+
+                weightVal = weight_spinner.getSelectedItem().toString();
+                String[] conv = weightVal.split(" ", 2);
+                String conv2 = conv[0];
+                double weightConv = Integer.parseInt(conv2);
+
+                if (!isMetric) {
+                    weightConv = weightConv / 2.205;
+                }
+
+                double calc = (double) ( 3.5 * weightConv) / 200;
+                int finalCalc = (int) Math.round(calc);
+                calories_burned.setText(String.valueOf(finalCalc));
             }
 
             @Override
