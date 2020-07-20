@@ -36,6 +36,7 @@ public class MetFragment extends Fragment {
     private TextView calories_burned;
 
     private ArrayAdapter timeAdapter;
+    private boolean isMinutes;
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 
@@ -167,7 +168,11 @@ public class MetFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
-                double hoursVal = hours_selected * 60;
+                double hoursVal = hours_selected;
+
+                if (!isMinutes) {
+                    hoursVal = hours_selected * 60;
+                }
 
                 weightVal = weight_spinner.getSelectedItem().toString();
                 double metVal = Double.parseDouble(met);
@@ -308,7 +313,11 @@ public class MetFragment extends Fragment {
                 }
                 met_score.setText(met);
                 double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
-                double hoursVal = hours_selected * 60;
+                double hoursVal = hours_selected;
+
+                if (!isMinutes) {
+                    hoursVal = hours_selected * 60;
+                }
 
                 weightVal = weight_spinner.getSelectedItem().toString();
                 double metVal = Double.parseDouble(met);
@@ -339,8 +348,10 @@ public class MetFragment extends Fragment {
 
                 if (choose_time_spinner.getSelectedItemPosition() == 0) {
                     timeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, minutes_list);
+                    isMinutes = true;
                 } else {
                     timeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, hours_list);
+                    isMinutes = false;
                 }
                 timeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 hours_spinner.setAdapter(timeAdapter);
@@ -356,7 +367,11 @@ public class MetFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
-                double hoursVal = hours_selected * 60;
+                double hoursVal = hours_selected;
+
+                if (!isMinutes) {
+                    hoursVal = hours_selected * 60;
+                }
 
                 weightVal = weight_spinner.getSelectedItem().toString();
                 double metVal = Double.parseDouble(met);
