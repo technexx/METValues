@@ -49,6 +49,7 @@ public class BasicFragment extends Fragment {
         final Spinner weight_spinner = root.findViewById(R.id.weight_spinner);
         final Spinner height_spinner = root.findViewById(R.id.height_spinner);
         final Spinner activity_spinner = root.findViewById(R.id.activity_spinner);
+        final TextView bmr = root.findViewById(R.id.bmr);
         final TextView tdee = root.findViewById(R.id.tdee);
         final TextView average = root.findViewById(R.id.average);
         final Button calculate = root.findViewById(R.id.calculate);
@@ -61,6 +62,7 @@ public class BasicFragment extends Fragment {
 
         gender.add(getString(R.string.male));
         gender.add(getString(R.string.female));
+        activity.add(getString(R.string.act_0));
         activity.add(getString(R.string.act_1));
         activity.add(getString(R.string.act_2));
         activity.add(getString(R.string.act_3));
@@ -134,14 +136,16 @@ public class BasicFragment extends Fragment {
 
                 switch (activityVal) {
                     case 0:
-                        modVal = 1.2; break;
+                        modVal = 1; break;
                     case 1:
-                        modVal = 1.37; break;
+                        modVal = 1.2; break;
                     case 2:
-                        modVal = 1.55; break;
+                        modVal = 1.37; break;
                     case 3:
-                        modVal = 1.725; break;
+                        modVal = 1.55; break;
                     case 4:
+                        modVal = 1.725; break;
+                    case 5:
                         modVal = 1.9;
                 }
 
@@ -164,6 +168,10 @@ public class BasicFragment extends Fragment {
                         calories = impFemale;
                     }
                 }
+
+                double bmrVal = calories / modVal;
+                bmr.setText(getString(R.string.two_part, String.valueOf(Math.round(bmrVal)), getString(R.string.calories)));
+
                 tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(calories)), getString(R.string.calories)));
 
                 double avg = calories / 24;

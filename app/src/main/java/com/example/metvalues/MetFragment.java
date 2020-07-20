@@ -1,5 +1,6 @@
 package com.example.metvalues;
 
+import android.content.SharedPreferences;
 import android.graphics.pdf.PdfDocument;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -22,7 +23,9 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class MetFragment extends Fragment {
 
@@ -344,7 +347,6 @@ public class MetFragment extends Fragment {
         choose_time_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ArrayAdapter<Double> hoursAdapter;
 
                 if (choose_time_spinner.getSelectedItemPosition() == 0) {
                     timeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, minutes_list);

@@ -9,6 +9,7 @@
     <string name="tdee">TDEE:</string>
     <string name="calories">Calories</string>
     <string name="average">Avg. Hourly:</string>
+    <string name="bmr">BMR:</string>
     <string name="calculate">Calculate!</string>
     <string name="two_part">%1$s  %2$s</string>
 
@@ -21,6 +22,7 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
 
+    <string name="act_0">Completely Sedentary</string>
     <string name="act_1">Mostly Inactive</string>
     <string name="act_2">Slightly Active</string>
     <string name="act_3">Moderately Active</string>
