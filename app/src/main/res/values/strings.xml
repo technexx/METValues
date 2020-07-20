@@ -29,6 +29,7 @@
 
     <string name="categories">Categories:</string>
     <string name="values">MET Values:</string>
+    <string name="minutes_spent">Minutes Spent:</string>
     <string name="hours_spent">Hours Spent:</string>
     <string name="met_score">MET Score:</string>
     <string name="calories_burned">Calories Burned:</string>
@@ -70,9 +71,9 @@
     </string-array>
 
     <string-array name="conditioning">
-        <item>Activity promoting video game (e.g. Wii Fit) - light effort (e.g. yoga, stretching) </item>
-        <item>Activity promoting video game (e.g. Wii Fit) - moderate effort (e.g. aerobic) </item>
-        <item>Activity promoting video game (e.g. Wii Fit) - vigorous effort (e.g. dancing)</item>
+        <item>Active video game (e.g. Wii Fit) - light effort (e.g. yoga, stretching) </item>
+        <item>Active video game (e.g. Wii Fit) - moderate effort (e.g. aerobic) </item>
+        <item>Active video game (e.g. Wii Fit) - vigorous effort (e.g. dancing)</item>
 
         <item>Calisthenics (e.g. sit-ups, crunches) - light effort </item>
         <item>Calisthenics (e.g. push-ups, pull-ups) - moderate effort </item>
@@ -85,7 +86,7 @@
 
         <item>Obstacle courses and/or boot camp </item>
 
-        <item>Resistance training - multiple exercises, 8 to 15 repetitions at varied resistance </item>
+        <item>Resistance training - multiple exercises, 8 to 15 repetitions </item>
         <item>Resistance training - squats at slow or explosive effort </item>
         <item>Resistance training - power lifting or body building at rigorous effort </item>
 
@@ -111,9 +112,9 @@
 
         <item>Water aerobics or calisthenics </item>
 
-        <item>Video exercise workouts - low effort (e.g. yoga, stretching) </item>
-        <item>Video exercise workouts - moderate effort (e.g. cardio, resistance) </item>
-        <item>Video exercise workouts - vigorous effort (e.g. cardio, resistance) </item>
+        <item>Video workouts - low effort (e.g. yoga, stretching) </item>
+        <item>Video workouts - moderate effort (e.g. cardio, resistance) </item>
+        <item>Video workouts - vigorous effort (e.g. cardio, resistance) </item>
 
         <item>Yoga - Hatha </item>
         <item>Yoga - Power </item>
@@ -122,7 +123,7 @@
     </string-array>
 
     <string-array name="dancing">
-        <item>Ballet, Modern, or Jazz - general rehearsal or class </item>
+        <item>Ballet, Modern, or Jazz - rehearsal or class </item>
         <item>Ballet, Modern, or Jazz - performance or vigorous effort </item>
 
         <item>Tap</item>
@@ -438,7 +439,7 @@
 
         <item>Catch (e.g. baseball or football) - general </item>
 
-        <item>Children\'s games (e.g. hopscotch, dodgeball, 4-square) at moderate effort </item>
+        <item>Children\'s games (e.g. hopscotch, dodgeball) at moderate effort </item>
 
         <item>Cheerleading or gymnastics - competitive </item>
 
