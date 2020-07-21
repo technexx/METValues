@@ -1,5 +1,6 @@
 package com.example.metvalues;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.pdf.PdfDocument;
 import android.os.AsyncTask;
@@ -11,9 +12,11 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import org.jsoup.Jsoup;
@@ -36,10 +39,30 @@ public class MetFragment extends Fragment {
     private String met;
     private String weightVal;
 
+    private int minutes;
+    private double hours;
+    private int caloriesVal;
     private TextView calories_burned;
 
     private ArrayAdapter timeAdapter;
     private boolean isMinutes;
+
+    private String subCat;
+    onAddCallback mOnAddCallback;
+
+    public interface onAddCallback{
+        void onAdd(String category, double met, int minutes, double hours, int calories);
+    }
+
+    @Override
+    public void onAttach (@NonNull Context context) {
+        super.onAttach(context);
+        try {
+            mOnAddCallback = (onAddCallback) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + "Must implement onAddCallback");
+        }
+    }
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 
@@ -47,11 +70,11 @@ public class MetFragment extends Fragment {
 
         List<String> weight_list = new ArrayList<>();
         List<String> category_list = new ArrayList<>();
-        List<String> activity_list = new ArrayList<>();
-        List<String> score_list = new ArrayList<>();
         List<String> choose_time = new ArrayList<>();
         final List<Integer> minutes_list = new ArrayList<>();
         final List<Double> hours_list = new ArrayList<>();
+
+        final Button add_button = root.findViewById(R.id.add_button);
 
         //Todo: Change hour intervals to total minutes
 
@@ -59,8 +82,6 @@ public class MetFragment extends Fragment {
         calories_burned = root.findViewById(R.id.calories_burned);
 
         final int calories = 0;
-        double hours = 0;
-        int minutes = 0;
         met = "0";
 
         category_list.add(getString(R.string.bicycling));
@@ -190,7 +211,9 @@ public class MetFragment extends Fragment {
 
                 double calc = (metVal * 3.5 * weightConv) / 200;
                 final double finalCalc = calc * hoursVal;
-                calories_burned.setText(String.valueOf(Math.round(finalCalc)));
+
+                caloriesVal = (int) Math.round(finalCalc);
+                calories_burned.setText(String.valueOf(caloriesVal));
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -282,37 +305,68 @@ public class MetFragment extends Fragment {
                 final int pos = sub_category_spinner.getSelectedItemPosition();
                 switch (catNumber) {
                     case 0:
-                        met = (bicycling_values[pos]); break;
+                        met = (bicycling_values[pos]);
+                        subCat = bicycling[pos];
+                        break;
                     case 1:
-                        met = (conditioning_values[pos]); break;
+                        met = (conditioning_values[pos]);
+                        subCat = conditioning[pos];
+                        break;
                     case 2:
-                        met = (dancing_values[pos]); break;
+                        met = (dancing_values[pos]);
+                        subCat = dancing[pos];
+                        break;
                     case 3:
-                        met = (fishing_values[pos]); break;
+                        met = (fishing_values[pos]);
+                        subCat = fishing[pos];
+                        break;
                     case 4:
-                        met = (home_values[pos]); break;
+                        met = (home_values[pos]);
+                        subCat = home[pos];
+                        break;
                     case 5:
-                        met = (garden_values[pos]); break;
+                        met = (garden_values[pos]);
+                        subCat = garden[pos];
+                        break;
                     case 6:
-                        met = (misc_values[pos]); break;
+                        met = (misc_values[pos]);
+                        subCat = misc[pos];
+                        break;
                     case 7:
-                        met = (music_values[pos]); break;
+                        met = (music_values[pos]);
+                        subCat = music[pos];
+                        break;
                     case 8:
-                        met = (occupational_values[pos]); break;
+                        met = (occupational_values[pos]);
+                        subCat = occupational[pos];
+                        break;
                     case 9:
-                        met = (running_values[pos]); break;
+                        met = (running_values[pos]);
+                        subCat = running[pos];
+                        break;
                     case 10:
-                        met = (self_care_values[pos]); break;
+                        met = (self_care_values[pos]);
+                        subCat = self_care[pos];
+                        break;
                     case 11:
-                        met = (sexual_values[pos]); break;
+                        met = (sexual_values[pos]);
+                        subCat = sexual[pos];
+                        break;
                     case 12:
-                        met = (sports_values[pos]); break;
+                        met = (sports_values[pos]);
+                        subCat = sports[pos];
+                        break;
                     case 13:
-                        met = (walking_values[pos]); break;
+                        met = (walking_values[pos]);
+                        subCat = walking[pos];
+                        break;
                     case 14:
-                        met = (water_values[pos]); break;
+                        met = (water_values[pos]);
+                        subCat = water[pos];
+                        break;
                     case 15:
                         met = (winter_values[pos]);
+                        subCat = winter[pos];
                 }
                 met_score.setText(met);
                 double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
@@ -394,6 +448,13 @@ public class MetFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+
+        add_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mOnAddCallback.onAdd(subCat, Double.parseDouble(met), minutes, hours, caloriesVal);
             }
         });
 

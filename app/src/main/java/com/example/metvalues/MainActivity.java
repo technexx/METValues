@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements  MetFragment.onAddCallback{
 
     private boolean isMetric;
     private boolean onBasic = true;
@@ -30,11 +30,16 @@ public class MainActivity extends AppCompatActivity {
         final MetFragment metFragment = new MetFragment();
         final CustomFragment customFragment = new CustomFragment();
 
+        basic.setBackgroundColor(getResources().getColor(R.color.off_white));
+        imperial.setBackgroundColor(getResources().getColor(R.color.off_white));
         final Bundle b = new Bundle();
 
         basic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                basic.setBackgroundColor(getResources().getColor(R.color.off_white));
+                met.setBackgroundColor(getResources().getColor(R.color.White));
+                custom.setBackgroundColor(getResources().getColor(R.color.White));
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, basicFragment)
                         .commit();
@@ -47,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         met.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                basic.setBackgroundColor(getResources().getColor(R.color.White));
+                met.setBackgroundColor(getResources().getColor(R.color.off_white));
+                custom.setBackgroundColor(getResources().getColor(R.color.White));
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, metFragment)
                         .commit();
@@ -59,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         custom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                basic.setBackgroundColor(getResources().getColor(R.color.White));
+                met.setBackgroundColor(getResources().getColor(R.color.White));
+                custom.setBackgroundColor(getResources().getColor(R.color.off_white));
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, customFragment)
                         .commit();
@@ -132,6 +143,25 @@ public class MainActivity extends AppCompatActivity {
         });
         fm.beginTransaction()
                 .add(R.id.main_fragment, basicFragment)
+                .commit();
+    }
+
+    @Override
+    public void onAdd(String category, double met, int minutes, double hours, int calories) {
+        FragmentManager fm = getSupportFragmentManager();
+        CustomFragment customFragment = new CustomFragment();
+
+        Bundle b = new Bundle();
+        b.putString("category", category);
+        b.putString("met", String.valueOf(met));
+        b.putInt("minutes", minutes);
+        b.putString("hours", String.valueOf(hours));
+        b.putInt("calories", calories);
+
+        customFragment.setArguments(b);
+
+        fm.beginTransaction()
+                .replace(R.id.main_fragment, customFragment)
                 .commit();
     }
 }

@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/custom_frag"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageButton
-        android:id="@+id/fab_button"
+        android:id="@+id/add_button"
         android:layout_width="64dp"
         android:layout_height="64dp"
         app:layout_constraintStart_toStartOf="parent"

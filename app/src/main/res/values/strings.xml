@@ -12,6 +12,7 @@
     <string name="bmr">BMR:</string>
     <string name="calculate">Calculate!</string>
     <string name="two_part">%1$s  %2$s</string>
+    <string name="add">Add to Custom Calculator</string>
 
     <string name="gender">Gender:</string>
     <string name="age">Age:</string>
