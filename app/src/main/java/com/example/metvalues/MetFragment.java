@@ -138,7 +138,6 @@ public class MetFragment extends Fragment {
         final Spinner weight_spinner = root.findViewById(R.id.met_spinnerOne);
         final Spinner category_spinner = root.findViewById(R.id.met_spinnerTwo);
         final Spinner sub_category_spinner = root.findViewById(R.id.met_spinnerThree);
-        final Spinner choose_time_spinner = root.findViewById(R.id.choose_time);
         final Spinner hours_spinner = root.findViewById(R.id.hours_spent);
 
         Bundle args = getArguments();
@@ -158,19 +157,16 @@ public class MetFragment extends Fragment {
 
         for (int i=0; i<48; i++) {
             hours = hours + 0.5;
-            minutes = minutes + 5;
             hours_list.add(hours);
-            minutes_list.add(minutes);
         }
 
-        choose_time.add(getString(R.string.minutes_spent));
         choose_time.add(getString(R.string.hours_spent));
 
         ArrayAdapter<String> weightAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, weight_list);
         ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, category_list);
         subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, bicycling);
         ArrayAdapter<String> chooseTimeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, choose_time);
-        timeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, minutes_list);
+        timeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, hours_list);
 
         weightAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -181,7 +177,6 @@ public class MetFragment extends Fragment {
         weight_spinner.setAdapter(weightAdapter);
         category_spinner.setAdapter(categoryAdapter);
         sub_category_spinner.setAdapter(subCategoryAdapter);
-        choose_time_spinner.setAdapter(chooseTimeAdapter);
         hours_spinner.setAdapter(timeAdapter);
 
         weight_spinner.setSelection(149);
@@ -390,27 +385,6 @@ public class MetFragment extends Fragment {
                 double calc = (metVal * 3.5 * weightConv) / 200;
                 final double finalCalc = calc * hoursVal;
                 calories_burned.setText(String.valueOf(Math.round(finalCalc)));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        choose_time_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (choose_time_spinner.getSelectedItemPosition() == 0) {
-                    timeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, minutes_list);
-                    isMinutes = true;
-                } else {
-                    timeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, hours_list);
-                    isMinutes = false;
-                }
-                timeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                hours_spinner.setAdapter(timeAdapter);
             }
 
             @Override

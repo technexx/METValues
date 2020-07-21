@@ -44,14 +44,6 @@ public class CustomFragment extends Fragment {
 
         Log.i("test", category + metConv + String.valueOf(minutes) + hoursConv + String.valueOf(calories));
 
-        ImageButton add = root.findViewById(R.id.add_button);
-
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
 
         return root;
 
