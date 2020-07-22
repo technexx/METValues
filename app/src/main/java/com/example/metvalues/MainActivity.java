@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
 
         basic.setBackgroundColor(getResources().getColor(R.color.off_white));
         imperial.setBackgroundColor(getResources().getColor(R.color.off_white));
+
         final Bundle b = new Bundle();
 
         basic.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
             public void onClick(View view) {
                 basic.setBackgroundColor(getResources().getColor(R.color.off_white));
                 met.setBackgroundColor(getResources().getColor(R.color.White));
+                b.putBoolean("isMetric", isMetric);
+                basicFragment.setArguments(b);
+
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, basicFragment)
                         .commit();
@@ -53,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
             public void onClick(View view) {
                 basic.setBackgroundColor(getResources().getColor(R.color.White));
                 met.setBackgroundColor(getResources().getColor(R.color.off_white));
+                b.putBoolean("isMetric", isMetric);
+                basicFragment.setArguments(b);
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, metFragment)
                         .commit();
@@ -82,7 +88,8 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
             public void onClick(View view) {
                 imperial.setBackgroundColor(getResources().getColor(R.color.off_white));
                 metric.setBackgroundColor(getResources().getColor(R.color.White));
-                b.putBoolean("isMetric", false);
+                isMetric = false;
+                b.putBoolean("isMetric", isMetric);
 
                 if (onBasic) {
                     basicFragment.setArguments(b);
@@ -114,7 +121,8 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
             public void onClick(View view) {
                 imperial.setBackgroundColor(getResources().getColor(R.color.White));
                 metric.setBackgroundColor(getResources().getColor(R.color.off_white));
-                b.putBoolean("isMetric", true);
+                isMetric = true;
+                b.putBoolean("isMetric", isMetric);
 
                 if (onBasic) {
                     basicFragment.setArguments(b);
