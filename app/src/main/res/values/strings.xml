@@ -2,6 +2,7 @@
     <string name="app_name">MET Values</string>
 
     <string name="basic">Basic</string>
+    <string name="tdee_button">TDEE</string>
     <string name="met">MET</string>
     <string name="custom">Custom</string>
     <string name="imperial">Imperial</string>
@@ -23,7 +24,7 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
 
-    <string name="act_0">Completely Sedentary</string>
+    <string name="act_0">Fully Sedentary</string>
     <string name="act_1">Mostly Inactive</string>
     <string name="act_2">Slightly Active</string>
     <string name="act_3">Moderately Active</string>
@@ -36,6 +37,11 @@
     <string name="hours_spent">Hours Spent:</string>
     <string name="met_score">MET Score:</string>
     <string name="calories_burned">Calories Burned:</string>
+
+    <string name="categoryHead">Activity</string>
+    <string name="metHead">MET Score</string>
+    <string name="hoursHead">Hours Spent</string>
+    <string name="caloriesHead">Calories Burned</string>
 
     <string name="bicycling">Bicycling</string>
     <string name="conditioning">Conditioning Exercise</string>

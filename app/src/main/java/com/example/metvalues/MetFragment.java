@@ -39,19 +39,18 @@ public class MetFragment extends Fragment {
     private String met;
     private String weightVal;
 
-    private int minutes;
     private double hours;
+    private int minutes;
     private int caloriesVal;
     private TextView calories_burned;
 
     private ArrayAdapter timeAdapter;
-    private boolean isMinutes;
 
     private String subCat;
     onAddCallback mOnAddCallback;
 
     public interface onAddCallback{
-        void onAdd(String category, double met, int minutes, double hours, int calories);
+        void onAdd(String category, double met, double hours, int calories);
     }
 
     @Override
@@ -66,17 +65,20 @@ public class MetFragment extends Fragment {
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 
+        //Todo: Un-reinstantiated globals survive replacement!
+
         View root = inflater.inflate(R.layout.met_fragment, container, false);
 
         List<String> weight_list = new ArrayList<>();
         List<String> category_list = new ArrayList<>();
         List<String> choose_time = new ArrayList<>();
-        final List<Integer> minutes_list = new ArrayList<>();
-        final List<Double> hours_list = new ArrayList<>();
+        List<Integer> minutes_list = new ArrayList<>();
+        List<Double> hours_list = new ArrayList<>();
+        hours = 0;
+        minutes = 0;
 
-        final Button add_button = root.findViewById(R.id.add_button);
 
-        //Todo: Change hour intervals to total minutes
+//        final Button add_button = root.findViewById(R.id.add_button);
 
         final TextView met_score = root.findViewById(R.id.met_score);
         calories_burned = root.findViewById(R.id.calories_burned);
@@ -139,6 +141,7 @@ public class MetFragment extends Fragment {
         final Spinner category_spinner = root.findViewById(R.id.met_spinnerTwo);
         final Spinner sub_category_spinner = root.findViewById(R.id.met_spinnerThree);
         final Spinner hours_spinner = root.findViewById(R.id.hours_spent);
+        final Spinner minutes_spinner = root.findViewById(R.id.hours_spent);
 
         Bundle args = getArguments();
         if (args != null) {
@@ -159,6 +162,10 @@ public class MetFragment extends Fragment {
             hours = hours + 0.5;
             hours_list.add(hours);
         }
+        for (int i=0; i<240; i++) {
+            minutes = minutes +1;
+            minutes_list.add(minutes);
+        }
 
         choose_time.add(getString(R.string.hours_spent));
 
@@ -166,18 +173,17 @@ public class MetFragment extends Fragment {
         ArrayAdapter<String> categoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, category_list);
         subCategoryAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_two, bicycling);
         ArrayAdapter<String> chooseTimeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, choose_time);
-        timeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, hours_list);
+        timeAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner, minutes_list);
 
         weightAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subCategoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        chooseTimeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         timeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         weight_spinner.setAdapter(weightAdapter);
         category_spinner.setAdapter(categoryAdapter);
         sub_category_spinner.setAdapter(subCategoryAdapter);
-        hours_spinner.setAdapter(timeAdapter);
+        minutes_spinner.setAdapter(timeAdapter);
 
         weight_spinner.setSelection(149);
         category_spinner.setSelection(0);
@@ -188,10 +194,9 @@ public class MetFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
                 double hoursVal = hours_selected;
+                int minutes_selected = Integer.parseInt(minutes_spinner.getSelectedItem().toString());
 
-                if (!isMinutes) {
-                    hoursVal = hours_selected * 60;
-                }
+                hoursVal = hours_selected * 60;
 
                 weightVal = weight_spinner.getSelectedItem().toString();
                 double metVal = Double.parseDouble(met);
@@ -205,7 +210,7 @@ public class MetFragment extends Fragment {
                 }
 
                 double calc = (metVal * 3.5 * weightConv) / 200;
-                final double finalCalc = calc * hoursVal;
+                final double finalCalc = calc * minutes_selected;
 
                 caloriesVal = (int) Math.round(finalCalc);
                 calories_burned.setText(String.valueOf(caloriesVal));
@@ -366,10 +371,9 @@ public class MetFragment extends Fragment {
                 met_score.setText(met);
                 double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
                 double hoursVal = hours_selected;
+                int minutes_selected = Integer.parseInt(minutes_spinner.getSelectedItem().toString());
 
-                if (!isMinutes) {
-                    hoursVal = hours_selected * 60;
-                }
+                hoursVal = hours_selected * 60;
 
                 weightVal = weight_spinner.getSelectedItem().toString();
                 double metVal = Double.parseDouble(met);
@@ -383,7 +387,7 @@ public class MetFragment extends Fragment {
                 }
 
                 double calc = (metVal * 3.5 * weightConv) / 200;
-                final double finalCalc = calc * hoursVal;
+                final double finalCalc = calc * minutes_selected;
                 calories_burned.setText(String.valueOf(Math.round(finalCalc)));
             }
 
@@ -398,10 +402,9 @@ public class MetFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 double hours_selected = Double.parseDouble(hours_spinner.getSelectedItem().toString());
                 double hoursVal = hours_selected;
+                int minutes_selected = Integer.parseInt(minutes_spinner.getSelectedItem().toString());
 
-                if (!isMinutes) {
-                    hoursVal = hours_selected * 60;
-                }
+                hoursVal = hours_selected * 60;
 
                 weightVal = weight_spinner.getSelectedItem().toString();
                 double metVal = Double.parseDouble(met);
@@ -415,20 +418,13 @@ public class MetFragment extends Fragment {
                 }
 
                 double calc = (metVal * 3.5 * weightConv) / 200;
-                final double finalCalc = calc * hoursVal;
+                final double finalCalc = calc * minutes_selected;
                 calories_burned.setText(String.valueOf(Math.round(finalCalc)));
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
-            }
-        });
-
-        add_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mOnAddCallback.onAdd(subCat, Double.parseDouble(met), minutes, hours, caloriesVal);
             }
         });
 

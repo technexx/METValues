@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
             public void onClick(View view) {
                 basic.setBackgroundColor(getResources().getColor(R.color.off_white));
                 met.setBackgroundColor(getResources().getColor(R.color.White));
-                custom.setBackgroundColor(getResources().getColor(R.color.White));
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, basicFragment)
                         .commit();
@@ -54,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
             public void onClick(View view) {
                 basic.setBackgroundColor(getResources().getColor(R.color.White));
                 met.setBackgroundColor(getResources().getColor(R.color.off_white));
-                custom.setBackgroundColor(getResources().getColor(R.color.White));
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, metFragment)
                         .commit();
@@ -63,21 +61,21 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
                 onCustom = false;
             }
         });
-
-        custom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                basic.setBackgroundColor(getResources().getColor(R.color.White));
-                met.setBackgroundColor(getResources().getColor(R.color.White));
-                custom.setBackgroundColor(getResources().getColor(R.color.off_white));
-                fm.beginTransaction()
-                        .replace(R.id.main_fragment, customFragment)
-                        .commit();
-                onCustom = true;
-                onBasic = false;
-                onCustom = false;
-            }
-        });
+//
+//        custom.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                basic.setBackgroundColor(getResources().getColor(R.color.White));
+//                met.setBackgroundColor(getResources().getColor(R.color.White));
+//                custom.setBackgroundColor(getResources().getColor(R.color.off_white));
+//                fm.beginTransaction()
+//                        .replace(R.id.main_fragment, customFragment)
+//                        .commit();
+//                onCustom = true;
+//                onBasic = false;
+//                onCustom = false;
+//            }
+//        });
 
         imperial.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,16 +145,15 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
     }
 
     @Override
-    public void onAdd(String category, double met, int minutes, double hours, int calories) {
+    public void onAdd(String category, double met, double hours, int calories) {
         FragmentManager fm = getSupportFragmentManager();
         CustomFragment customFragment = new CustomFragment();
 
         Bundle b = new Bundle();
         b.putString("category", category);
         b.putString("met", String.valueOf(met));
-        b.putInt("minutes", minutes);
         b.putString("hours", String.valueOf(hours));
-        b.putInt("calories", calories);
+        b.putString("calories", String.valueOf(calories));
 
         customFragment.setArguments(b);
 
