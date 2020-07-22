@@ -6,6 +6,7 @@ import android.graphics.pdf.PdfDocument;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,13 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import org.jsoup.Jsoup;
@@ -69,6 +73,7 @@ public class MetFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.met_fragment, container, false);
 
+        final Button about = root.findViewById(R.id.about_met);
         List<String> weight_list = new ArrayList<>();
         List<String> category_list = new ArrayList<>();
         List<String> choose_time = new ArrayList<>();
@@ -425,6 +430,32 @@ public class MetFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+
+        final ConstraintLayout metFragment = root.findViewById(R.id.met_fragment);
+        LayoutInflater layoutInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View myView = layoutInflater.inflate(R.layout.about_met, null);
+
+        final PopupWindow popupWindow = new PopupWindow(myView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow.setFocusable(true);
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                metFragment.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            popupWindow.setWidth(850);
+                            popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+                            popupWindow.setElevation(5);
+                            popupWindow.showAtLocation(metFragment, Gravity.CENTER, 0, 0);
+                        } catch (Exception e) {
+                            Log.e("Error", "Popup not inflating");
+                        }
+                    }
+                });
             }
         });
 

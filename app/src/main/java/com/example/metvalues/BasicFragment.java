@@ -3,15 +3,19 @@ package com.example.metvalues;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
@@ -51,8 +55,8 @@ public class BasicFragment extends Fragment {
         final Spinner activity_spinner = root.findViewById(R.id.activity_spinner);
         final TextView bmr = root.findViewById(R.id.bmr);
         final TextView tdee = root.findViewById(R.id.tdee);
-        final TextView average = root.findViewById(R.id.average);
         final Button calculate = root.findViewById(R.id.calculate);
+        final Button about = root.findViewById(R.id.about);
 
         final List<String> gender = new ArrayList<>();
         final List<String> age = new ArrayList<>();
@@ -175,9 +179,35 @@ public class BasicFragment extends Fragment {
                 tdee.setText(getString(R.string.two_part, String.valueOf(Math.round(calories)), getString(R.string.calories)));
 
                 double avg = calories / 24;
-                average.setText(getString(R.string.two_part, String.valueOf(Math.round(avg)), getString(R.string.calories)));
             }
         });
+
+        final ConstraintLayout basicFragment = root.findViewById(R.id.basic_fragment);
+        LayoutInflater layoutInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View myView = layoutInflater.inflate(R.layout.about_tdee, null);
+
+        final PopupWindow popupWindow = new PopupWindow(myView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow.setFocusable(true);
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                basicFragment.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            popupWindow.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
+                            popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+                            popupWindow.setElevation(5);
+                            popupWindow.showAtLocation(basicFragment, Gravity.CENTER, 0, 0);
+                        } catch (Exception e) {
+                            Log.e("Error", "Popup not inflating");
+                        }
+                    }
+                });
+            }
+        });
+
         return root;
     }
 }
