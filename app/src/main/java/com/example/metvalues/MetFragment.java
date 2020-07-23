@@ -51,21 +51,6 @@ public class MetFragment extends Fragment {
     private ArrayAdapter timeAdapter;
 
     private String subCat;
-    onAddCallback mOnAddCallback;
-
-    public interface onAddCallback{
-        void onAdd(String category, double met, double hours, int calories);
-    }
-
-    @Override
-    public void onAttach (@NonNull Context context) {
-        super.onAttach(context);
-        try {
-            mOnAddCallback = (onAddCallback) context;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() + "Must implement onAddCallback");
-        }
-    }
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 

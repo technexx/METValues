@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements  MetFragment.onAddCallback{
+public class MainActivity extends AppCompatActivity{
 
     private boolean isMetric;
     private boolean onBasic = true;
@@ -149,24 +149,6 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
         });
         fm.beginTransaction()
                 .add(R.id.main_fragment, basicFragment)
-                .commit();
-    }
-
-    @Override
-    public void onAdd(String category, double met, double hours, int calories) {
-        FragmentManager fm = getSupportFragmentManager();
-        CustomFragment customFragment = new CustomFragment();
-
-        Bundle b = new Bundle();
-        b.putString("category", category);
-        b.putString("met", String.valueOf(met));
-        b.putString("hours", String.valueOf(hours));
-        b.putString("calories", String.valueOf(calories));
-
-        customFragment.setArguments(b);
-
-        fm.beginTransaction()
-                .replace(R.id.main_fragment, customFragment)
                 .commit();
     }
 }
