@@ -196,7 +196,7 @@ public class BasicFragment extends Fragment {
                     @Override
                     public void run() {
                         try {
-                            popupWindow.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
+                            popupWindow.setWidth(850);
                             popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
                             popupWindow.setElevation(5);
                             popupWindow.showAtLocation(basicFragment, Gravity.CENTER, 0, 0);

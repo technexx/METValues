@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements  MetFragment.onAd
                 basic.setBackgroundColor(getResources().getColor(R.color.White));
                 met.setBackgroundColor(getResources().getColor(R.color.off_white));
                 b.putBoolean("isMetric", isMetric);
-                basicFragment.setArguments(b);
+                metFragment.setArguments(b);
                 fm.beginTransaction()
                         .replace(R.id.main_fragment, metFragment)
                         .commit();
