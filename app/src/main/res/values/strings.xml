@@ -45,11 +45,11 @@
     <string name="caloriesHead">Calories Burned</string>
 
     <string name="bicycling">Bicycling</string>
-    <string name="conditioning">Conditioning Exercise</string>
+    <string name="conditioning">Conditioning</string>
     <string name="dancing">Dancing</string>
-    <string name="fishing">Fishing and Hunting</string>
+    <string name="fishing">Fishing &amp; Hunting</string>
     <string name="home">Home Activities</string>
-    <string name="garden">Lawn and Garden</string>
+    <string name="garden">Lawn &amp; Garden</string>
     <string name="misc">Miscellaneous</string>
     <string name="music">Music Playing</string>
     <string name="occupational">Occupational</string>
