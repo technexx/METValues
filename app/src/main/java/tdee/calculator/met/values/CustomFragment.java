@@ -1,4 +1,4 @@
-package com.example.metvalues;
+package tdee.calculator.met.values;
 
 import android.content.Context;
 import android.content.SharedPreferences;
